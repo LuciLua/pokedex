@@ -1,0 +1,20 @@
+.listaPokemons{
+    list-style: none;
+}
+
+.container{
+    background-color: #E9DA4E;
+}
+
+.container::before{
+    content: url('https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pikachu-com-Fundo-Transparente-1024x919.png');
+    position: absolute;
+    
+}
+
+.listaPokemons{
+    padding: 20px;
+    background-color: #EF192B;
+
+    color: #E9DA4E;
+}

@@ -18,17 +18,35 @@ export default function Home(props){
     const { pokemons } = props
 
     return(
+        <>
         <div className={styles.container}>
-            <h1>Pekedéx - LuciLua</h1>
-            <ul className={styles.listaPokemons}>
-                {pokemons.map(pokemon => (
-                    <li key={pokemon.entry_number}>
-                        {pokemon.pokemon_species.name}
-                    </li>
-                ))}
-            </ul>
-        </div>
+            <h1>Pokedéx - LuciLua</h1>
+            <table className={styles.tablePokemon}>
+                <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                </tr>
+                <tr>
+                    <td>
+                    {pokemons.map(pokemon => (
+                        <tr key={pokemon.entry_number}>
+                            {pokemon.entry_number}
+                        </tr>
+                        ))}
+                    </td>
+                    <td>
+                    {pokemons.map(pokemon => (
+                        <tr key={pokemon.entry_number}>
+                            {pokemon.pokemon_species.name}
+                        </tr>
+                        ))}
+                    </td>
+                </tr>
 
+            </table>
+
+        </div>
+    </>
     )
 }
 

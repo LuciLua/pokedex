@@ -34,11 +34,9 @@ export default function Home(props) {
               <th>Nome</th>
             </tr>
             {pokemons.map((pokemon) => (
-              <tr>
-                <td key={pokemon.entry_number}>{pokemon.entry_number}</td>
-                <td key={pokemon.entry_number}>
-                  {pokemon.pokemon_species.name}
-                </td>
+              <tr key={pokemon.entry_number}>
+                <td>{pokemon.entry_number}</td>
+                <td>{pokemon.pokemon_species.name}</td>
               </tr>
             ))}
           </table>
@@ -48,6 +46,7 @@ export default function Home(props) {
               <div className={styles.imagemPokemon}>
                 <Image
                   src="https://assets.pokemon.com/assets/cms2/img/misc/countries/pt/country_detail_pokemon.png"
+                  unoptimized
                   width={250}
                   height={250}
                   quality={100}
@@ -57,17 +56,17 @@ export default function Home(props) {
                 />
               </div>
               <ul>
-                  <li>
-                      Dado sobre pokemon
+                  <li key={`especie`}>
+                      Dado sobre pokemon 1
                   </li>
-                  <li>
-                      Dado sobre pokemon
+                  <li key={`pc`}>
+                      Dado sobre pokemon 2
                   </li>
-                  <li>
-                      Dado sobre pokemon
+                  <li key={`vida`}>
+                      Dado sobre pokemon 3
                   </li>
-                  <li>
-                      Dado sobre pokemon
+                  <li key={`poder`}> 
+                      Dado sobre pokemon 4
                   </li>
               </ul>
             </div>

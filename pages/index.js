@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
+import Link from 'next/link'
 import  ReactDOM  from "react-dom";
 
 var idPoked = 1
@@ -46,20 +46,23 @@ export default function Home(props) {
   }
   
   
-  function togglePokedex(o){
+  function togglePokedex(){
     const table = document.getElementById('tablePokemon')
-    const btn = document.getElementById('btnTogglePokedex')
-
     table.classList.toggle(styles.tablemenor) 
 
   }
-
 
   return (
     
     <>
       <div className={styles.container}>
         <h1>Pokedéx</h1>
+         <Link href="/about">
+            <a>Sobre o projeto</a>
+          </Link>
+         <Link href="/">
+            <a>Home</a>
+          </Link>
         <div className={styles.wrap}>
           <button className={styles.btnTogglePokedex} id={'btnTogglePokedex'} onClick={togglePokedex}>
             Pokedex
@@ -84,15 +87,7 @@ export default function Home(props) {
             <h1>POKEMON INFO</h1>
             <div className={styles.aboutPokemon}>
               <div className={styles.imagemPokemon}>
-                <Image
-                  id={'pokeIma'}
-                  src={pokemonsIMG}
-                  unoptimized
-                  width={250}
-                  height={250}
-                  objectFit="cover"
-                  alt="Picture of pokemon"
-                />
+                <img id={'pokeIma'} src={pokemonsIMG}/>
               </div>
               <ul>
                   <li id={'tituloPoke'}>bulbasaur</li>

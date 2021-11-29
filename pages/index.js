@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import Link from 'next/link'
-import  ReactDOM  from "react-dom";
 
 var idPoked = 1
 
@@ -13,6 +12,7 @@ export async function getStaticProps(ctx) {
   const pokemons = await fetch(url)
     .then((resp) => {
       if (resp.ok) return resp.json();
+      throw new Error('Erro!')
     })
     .then((json) => json.pokemon_entries);
 
@@ -36,8 +36,6 @@ export default function Home(props) {
  function poke(e){
     var nomePoke = e.target
 
-    // ReactDOM.render(`Nome: ${nomePoke.className}`, document.getElementById('tituloPoke'))
-    // ReactDOM.render(`ID: ${nomePoke.id}`, document.getElementById('idPoke'))
     document.getElementById('tituloPoke').innerHTML = `Nome: ${nomePoke.className}`
     document.getElementById('idPoke').innerHTML = `ID: ${nomePoke.id}`
 

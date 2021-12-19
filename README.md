@@ -1,4 +1,4 @@
-<h1 align="center">Pokedéx</h1>
+<p align="center"><img src="large.png"></p>
 <p align="center">Pokedex project: pokemon listing, image and attributes of each one</p>
 <h1 align="center">
 <img src="https://img.shields.io/apm/l/react?style=flat-square"> <img src="https://img.shields.io/github/stars/LuciLua/pokedex?style=flat-square">

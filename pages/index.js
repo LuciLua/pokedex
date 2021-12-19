@@ -65,13 +65,22 @@ export default function Home(props) {
           <button className={styles.btnTogglePokedex} id={'btnTogglePokedex'} onClick={togglePokedex}>
             Pokedex
           </button>
-          <table className={styles.tablePokemon} id={'tablePokemon'}>
+          <div className={styles.wrapTables}>
+
+          <table className={styles.headTable}>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Nome</th>
+                <th>
+                  Nome
+                </th>
+                <th>
+                  ID
+                </th>
               </tr>
             </thead>
+
+          </table>
+          <table className={styles.tablePokemon} id={'tablePokemon'}>
             <tbody>
               {pokemons.map((pokemon) => (
                 <tr key={pokemon.entry_number} onClick={poke}>
@@ -81,6 +90,7 @@ export default function Home(props) {
               ))}
             </tbody>
           </table>
+                  </div>
           <div className={styles.infoPokemon}>
             <h1>POKEMON INFO</h1>
             <div className={styles.aboutPokemon}>

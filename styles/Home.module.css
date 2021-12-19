@@ -1,14 +1,14 @@
-.listaPokemons{
+.listaPokemons {
     list-style: none;
 }
 
-.wrap{
+.wrap {
     display: flex;
     width: 100%;
     min-width: 100%;
 }
 
-.container{
+.container {
     background-color: #f3f3f3;
 
     display: flex;
@@ -23,10 +23,10 @@
     min-height: 100vh;
 }
 
-.container > h1{
+.container>h1 {
     font-family: 'Lexend', sans-serif;
     color: #EF192B;
- 
+
     display: flex;
     align-items: center;
 
@@ -34,7 +34,7 @@
 
     width: 100%;
     height: 100px;
-    
+
     background-color: #f3f3f3;
 
     text-align: center;
@@ -44,76 +44,182 @@
 }
 
 .tablePokemon,
-.infoPokemon{
+.infoPokemon {
     box-shadow: 0 0 8px rgba(28, 28, 28, 0.2);
 }
 
-.tablePokemon, .tablemenor{
+.wrapTables {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 80vh;
 
-    border-collapse: collapse;
+    margin: 5px;
+
     position: relative;
-    
-    margin: 30px;
-    margin-right: auto;
-    
-    display: block;
+}
 
-    width: 350px;
-    height: calc(100vh - 160px);
-
-    overflow-y: scroll;
-
+.headTable, .tablemenor, .tablePokemon {
     border-radius: 10px;
 
     background-color: #EF192B;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
 
     transition: 0.3s;
+    border-collapse: collapse;
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 30px;
+
 }
-.tablemenor{
+
+.headTable {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.headTable thead,
+.headTable thead tr,
+.headTable thead tr th {
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.tablePokemon tbody tr td:nth-child(1),
+.headTable thead tr th:nth-child(1) {
+    width: 40%;
+    height: 100%;
+
+    border-right: 1px solid #be1321;
+
+    position: relative;
+}
+
+.tablePokemon tbody tr td:nth-child(2),
+.headTable thead tr th:nth-child(2) {
+    width: 60%;
+    height: 100%;
+
+    position: relative;
+}
+
+.tablePokemon {
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    padding: 0;
+
+    position: relative;
+}
+
+.tablePokemon tbody {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+}
+
+.tablePokemon tbody tr {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.tablePokemon tbody tr td:nth-child(1) {
+    position: relative;
+
+    height: 100%;
+    width: 40%;
+}
+
+.tablePokemon tbody tr td:nth-child(2) {
+    position: relative;
+
+    height: 100%;
+    width: 60%;
+}
+
+
+
+.tablePokemon, .tablemenor {
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    overflow-y: scroll;
+}
+
+.tablemenor {
     width: 0px;
 }
 
 
-.tablePokemon::-webkit-scrollbar{
+.tablePokemon::-webkit-scrollbar {
     display: none;
 }
 
-.tablePokemon tr td:nth-child(1) {
-   border-right: 1px solid #be1321;
-}
 
 
-.tablePokemon tr th,
-.tablePokemon tr td{
+.tablePokemon tr td {
     position: relative;
     text-align: center;
-
-    padding: 10px 15px;
-
-    width: 175px;
-
-    color: #fcfcfc;
-    font-family: 'Lexend', sans-serif;
 
     cursor: pointer;
 
     user-select: none;
 }
 
-.tablePokemon tr:hover td{
+
+.tablePokemon tr:hover td {
     background-color: #00000038;
 }
 
 
-.tablePokemon tr:nth-child(even){
+/* .tablePokemon tr:nth-child(even){
     background-color: #00000015;
 }
 .tablePokemon tr:nth-child(odd){
     background-color: #00000004;
-}
+} */
 
 
-.infoPokemon{
+.infoPokemon {
     font-family: 'Lexend', sans-serif;
 
     position: relative;
@@ -135,13 +241,13 @@
     background-color: #ffffff;
 }
 
-.infoPokemon h1{
+.infoPokemon h1 {
     border-bottom: 1px solid rgba(67, 67, 67, 0.056);
     padding-bottom: 15px;
     margin-bottom: 25px;
 }
 
-.infoPokemon .imagemPokemon{
+.infoPokemon .imagemPokemon {
     box-shadow: 2px 2px 7px rgba(48, 48, 48, 0.179);
     border-radius: 10px;
     overflow: hidden;
@@ -152,13 +258,13 @@
     min-width: 250px;
 }
 
-.infoPokemon .imagemPokemon img{
+.infoPokemon .imagemPokemon img {
     width: 100%;
     height: 100%;
 }
 
 
-.infoPokemon .aboutPokemon{
+.infoPokemon .aboutPokemon {
     width: 100%;
     height: 250px;
 
@@ -166,12 +272,12 @@
     align-items: center;
 }
 
-.infoPokemon .aboutPokemon ul{
-list-style: none;
+.infoPokemon .aboutPokemon ul {
+    list-style: none;
 
 }
 
-.infoPokemon .aboutPokemon ul li{
+.infoPokemon .aboutPokemon ul li {
 
     background-color: #EF192B;
     color: #fff;
@@ -191,7 +297,7 @@ list-style: none;
 }
 
 
-.btnTogglePokedex{
+.btnTogglePokedex {
     min-width: 80px;
     width: 80px;
     min-height: 80px;
@@ -215,46 +321,45 @@ list-style: none;
 
 }
 
-.btnTogglePokedex:hover{
+.btnTogglePokedex:hover {
     background-color: #b80c1a;
 }
 
 
 @media only screen and (max-width: 600px) {
     .container .wrap {
-    flex-direction: column;
+        flex-direction: column;
     }
 
-    .tablePokemon{
+    .tablePokemon {
         height: 90px;
         margin: 20px auto;
 
         min-width: 100%;
     }
 
-    .btnTogglePokedex{
+    .btnTogglePokedex {
         display: none;
     }
 
     .tablePokemon tbody td,
-    .tablePokemon thead td
-    {
+    .tablePokemon thead td {
         width: 10%;
         min-width: 255px;
     }
 
-    .infoPokemon .imagemPokemon{
+    .infoPokemon .imagemPokemon {
         max-width: 150px;
         max-height: 150px;
         min-width: 150px;
         min-height: 150px;
     }
 
-    .container{
+    .container {
         padding: 25px;
     }
 
-    .infoPokemon{
+    .infoPokemon {
         height: 100%;
         max-width: 100%;
         min-width: 100%;
@@ -262,11 +367,11 @@ list-style: none;
         margin: auto;
 
     }
-  }
+}
 
 
-  .footer{
-      position: absolute;
+.footer {
+    position: absolute;
 
-      bottom: 0;
-    }
+    bottom: 0;
+}

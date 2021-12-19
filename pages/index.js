@@ -30,82 +30,89 @@ export async function getStaticProps(ctx) {
 
 export default function Home(props) {
 
-    
+
   const { pokemons, pokemonsIMG } = props;
 
- function poke(e){
+  function poke(e) {
     var nomePoke = e.target
 
     document.getElementById('tituloPoke').innerHTML = `Nome: ${nomePoke.className}`
     document.getElementById('idPoke').innerHTML = `ID: ${nomePoke.id}`
 
     var novoLink = pokemonsIMG.replace(idPoked, nomePoke.id)
-    document.getElementById('pokeIma').src=novoLink
+    document.getElementById('pokeIma').src = novoLink
   }
-  
-  
-  function togglePokedex(){
+
+
+  function togglePokedex() {
     const table = document.getElementById('tablePokemon')
-    table.classList.toggle(styles.tablemenor) 
+    const header = document.getElementById('headerTable')
+    const wrapTables = document.getElementById('wrapTables')
+
+    table.classList.toggle(styles.tablemenor)
+    header.classList.toggle(styles.headermenor)
+    wrapTables.classList.toggle(styles.wrapTablesMenor)
 
   }
 
   return (
-    
+
     <>
       <div className={styles.container}>
         <h1>Pokedéx</h1>
-         <Link href="/about">
+        {/* <Link href="/about">
             <a>Sobre o projeto</a>
           </Link>
          <Link href="/">
             <a>Home</a>
-          </Link>
+          </Link> */}
         <div className={styles.wrap}>
           <button className={styles.btnTogglePokedex} id={'btnTogglePokedex'} onClick={togglePokedex}>
-            Pokedex
+          <div className={styles.listraPokeBola}>
+
+          </div>
           </button>
-          <div className={styles.wrapTables}>
+          <div className={styles.wrapTables} id="wrapTables">
 
-          <table className={styles.headTable}>
-            <thead>
-              <tr>
-                <th>
-                  Nome
-                </th>
-                <th>
-                  ID
-                </th>
-              </tr>
-            </thead>
-
-          </table>
-          <table className={styles.tablePokemon} id={'tablePokemon'}>
-            <tbody>
-              {pokemons.map((pokemon) => (
-                <tr key={pokemon.entry_number} onClick={poke}>
-                  <td className={pokemon.pokemon_species.name} id={pokemon.entry_number}>{pokemon.entry_number} </td>
-                  <td className={pokemon.pokemon_species.name} id={pokemon.entry_number}>{pokemon.pokemon_species.name}</td>
+            <table className={styles.headTable} id="headerTable">
+              <thead>
+                <tr>
+                  <th>
+                    Nome
+                  </th>
+                  <th>
+                    ID
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-                  </div>
+              </thead>
+
+            </table>
+            <table className={styles.tablePokemon} id={'tablePokemon'}>
+              <tbody>
+                {pokemons.map((pokemon) => (
+                  <tr key={pokemon.entry_number} onClick={poke}>
+                    <td className={pokemon.pokemon_species.name} id={pokemon.entry_number}>{pokemon.entry_number} </td>
+                    <td className={pokemon.pokemon_species.name} id={pokemon.entry_number}>{pokemon.pokemon_species.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div className={styles.infoPokemon}>
             <h1>POKEMON INFO</h1>
             <div className={styles.aboutPokemon}>
               <div className={styles.imagemPokemon}>
-                <img id={'pokeIma'} src={pokemonsIMG}/>
+                <img id={'pokeIma'} src={pokemonsIMG} />
               </div>
               <ul>
-                  <li id={'tituloPoke'}>bulbasaur</li>
-                  <li id={'idPoke'}>1</li>
+                <li id={'tituloPoke'}>bulbasaur</li>
+                <li id={'idPoke'}>1</li>
               </ul>
             </div>
           </div>
         </div>
         <footer className={styles.footer}>
-        LuciLua@2021
+          LuciLua@2021
         </footer>
       </div>
     </>

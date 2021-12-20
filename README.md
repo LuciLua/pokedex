@@ -24,6 +24,8 @@ To contribute to this project or learn from it is very simple, just clone this r
 
 > node package manager (NPM or YARN)
 
+> Git bash (optional, you can download the code directly from GitHub at 'code' > 'Download zip')
+
 ### ✨ Now are you ready to start 
 
 > clone the repository

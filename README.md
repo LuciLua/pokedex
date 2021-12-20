@@ -24,28 +24,40 @@ Pokedex project: pokemon listing, image and attributes of each one
 ### ✨ Now are you ready to start 
 
 > clone the repository
-<code> git clone https://github.com/LuciLua/pokedex.git</code>
+```bash
+git clone https://github.com/LuciLua/pokedex.git
+```
 
 > open project folder
-<code> cd ./pokedex</code>
+ ```bash
+cd ./pokedex
+```
 
 > install all packages using npm or yarn manager (using NPM)
-<code> npm i </code>
+```bash
+npm i
+```
 
 > start the development server (using NPM)
-<code> npm run dev </code>
+```bash
+npm run dev
+```
 
 ### 🏗 Build 
 
 > to make a build (using NPM)
-<code> npm run build </code>
+```bash
+npm run build
+```
 
 > to start the server in production-ready mode (using NPM)
-<code> npm run start </code>
+```bash
+npm run start
+```
 
 
 ## 🖼 Preview
 
 **So far, this is the preview, but you can check it out at [this updated link](https://pokedex-of-luci.vercel.app/)**
 
-<img src="./print.png"/>
+<img src="print.png"/>

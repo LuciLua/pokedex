@@ -2,8 +2,11 @@
 <p align="center">Pokedex project: pokemon listing, image and attributes of each one</p>
 <h1 align="center">
 <img src="https://img.shields.io/apm/l/react?style=flat-square"> <img src="https://img.shields.io/github/stars/LuciLua/pokedex?style=flat-square">
-<img src="https://img.shields.io/github/last-commit/LuciLua/pokedex?style=flat-square"> <img src="https://img.shields.io/github/commit-activity/w/LuciLua/pokedex?style=flat-square">
+<img src="https://img.shields.io/github/last-commit/LuciLua/pokedex?style=flat-square"> <img src="https://img.shields.io/github/commit-activity/w/LuciLua/pokedex?style=flat-square"> <img src="https://img.shields.io/github/languages/code-size/LuciLua/pokedex">
+
+</br>
 </h1>
+</br>
 
 ## 🛠 Technologies used
 
@@ -15,7 +18,7 @@
 
 ## 🚀 How to start
 
-Pokedex project: pokemon listing, image and attributes of each one
+To contribute to this project or learn from it is very simple, just clone this repository on your computer and install the necessary dependencies for it to work. Below you can check how to do this, as well as how to run it on a local server.
 
 ### 📌 Requirement
 

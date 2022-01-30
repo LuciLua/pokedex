@@ -43,163 +43,11 @@
 
 }
 
-.tablePokemon,
 .infoPokemon {
     box-shadow: 0 0 8px rgba(28, 28, 28, 0.2);
 }
 
-.wrapTables {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 450px;
-    height: 80vh;
 
-    margin: 5px;
-
-    position: relative;
-    transition: 0.3s;
-}
-
-.headTable, .tablemenor, .tablePokemon {
-    border-radius: 10px;
-
-    background-color: #EF192B;
-    color: #fff;
-    font-family: 'Lexend', sans-serif;
-    
-    transition: 0.3s;
-    border-collapse: collapse;
-    
-    width: 100%;
-    height: 100%;
-
-    position: relative;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 30px;
-
-}
-
-.headTable {
-    height: 40px;
-    width: 100%;
-    margin-bottom: 3px;
-}
-
-
-.headTable thead,
-.headTable thead tr,
-.headTable thead tr th {
-    width: 100%;
-
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-
-.tablePokemon tbody tr td:nth-child(1),
-.headTable thead tr th:nth-child(1) {
-    width: 40%;
-
-    border-right: 1px solid #be1321;
-
-    position: relative;
-}
-
-.tablePokemon tbody tr td:nth-child(2),
-.headTable thead tr th:nth-child(2) {
-    width: 60%;
-
-    position: relative;
-}
-
-.tablePokemon {
-    width: 100%;
-    height: 100%;
-
-    justify-content: center;
-    align-items: center;
-    display: flex;
-
-    position: relative;
-}
-
-.tablePokemon tbody {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    position: relative;
-}
-
-.tablePokemon tbody tr {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-}
-
-.tablePokemon tbody tr td {
-    height: 35px;
-
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-.tablePokemon tbody tr td:nth-child(1) {
-    position: relative;
-
-    width: 40%;
-}
-
-.tablePokemon tbody tr td:nth-child(2) {
-    position: relative;
-
-    width: 60%;
-}
-
-.tablePokemon, .tablemenor {
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-    position: relative;
-
-    overflow-y: scroll;
-}
-
-.tablemenor,
-.headermenor
-{
-    width: 0px;
-
-    overflow: hidden;
-
-    animation: displayNone 0.1s linear;
-}
-
-.wrapTablesMenor{
-    width: 0;
-}
 
 @keyframes displayNone {
     0%{
@@ -210,34 +58,6 @@
         display: none;
     }
 }
-
-.tablePokemon::-webkit-scrollbar {
-    display: none;
-}
-
-
-.tablePokemon tr td {
-    position: relative;
-    text-align: center;
-
-    cursor: pointer;
-
-    user-select: none;
-}
-
-
-.tablePokemon tr:hover td {
-    background-color: #00000038;
-}
-
-
-.tablePokemon tr:nth-child(even){
-    background-color: #00000015;
-}
-.tablePokemon tr:nth-child(odd){
-    background-color: #00000004;
-}
-
 
 .infoPokemon {
     font-family: 'Lexend', sans-serif;
@@ -315,91 +135,6 @@
 }
 
 
-.btnTogglePokedex {
-    min-width: 80px;
-    width: 80px;
-    min-height: 80px;
-    height: 80px;
-
-    border: black 3px solid;
-    border-radius: 60%;
-
-    background-color: #EF192B;
-    color: #fff;
-
-    font-family: Lexend;
-
-    margin: 10px;
-
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-
-    cursor: pointer;
-}
-
-.btnTogglePokedex::before{
-    content: '';
-    width: 0;
-    height: 0;
-    background-color: transparent;
-    position: absolute;
-    border-radius: 60%;
-
-    border: 37px solid transparent;
-
-    border-left-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    transform: rotateZ(225deg);
-
-    top: 0;
-    left: 0;
-}
-
-.listraPokeBola{
-    width: 30px;
-    height: 30px;
-    background-color: #000;
-    border-radius: 60%;
-
-    position: relative;
-
-    z-index: 10;
-}
-
-.listraPokeBola::before{
-    content: '';
-    width: 25px;
-    height: 25px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 60%;
-
-    position: absolute;
-    left: 2px;
-    top: 2px;
-}
-
-.btnTogglePokedex::after{
-    content: '';
-    width: 75px;
-    background-color: #000;
-    height: 3px;
-
-    position: absolute;
-
-    top: 35px;
-    left: 0;
-
-    z-index: 1;
-}
-
-.btnTogglePokedex:hover {
-    background-color: #b80c1a;
-}
-
-
 @media only screen and (max-width: 600px) {
     .container .wrap {
         flex-direction: column;
@@ -449,29 +184,6 @@
         padding: 5px;
     }
     
-    /* .tablePokemon {
-        height: 90px;
-        margin: 20px auto;
-
-        min-width: 100%;
-    }
-
-    .btnTogglePokedex {
-        display: none;
-    }
-
-    .tablePokemon tbody td,
-    .tablePokemon thead td {
-        width: 10%;
-        min-width: 255px;
-    }
-
-
-    .container {
-        padding: 25px;
-    }
-
-     */
 }
 
 

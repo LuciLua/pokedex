@@ -138,6 +138,7 @@ export default function Home(props) {
               </div>
             </ul>
           </div>
+          <h1>Info</h1>
         </div>
       </div>
       <footer className={styles.footer}>

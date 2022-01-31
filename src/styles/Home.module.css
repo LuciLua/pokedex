@@ -21,6 +21,7 @@
   height: 100%;
 
   min-height: 100vh;
+
 }
 
 .container > h1 {
@@ -30,7 +31,7 @@
   display: flex;
   align-items: center;
 
-  padding-left: 150px;
+  padding-left: 3vw;
 
   width: 100%;
   height: 100px;
@@ -40,10 +41,6 @@
   text-align: center;
 
   position: relative;
-}
-
-.infoPokemon {
-  box-shadow: 0 0 8px rgba(28, 28, 28, 0.2);
 }
 
 @keyframes displayNone {
@@ -60,8 +57,8 @@
   font-family: "Lexend", sans-serif;
 
   position: relative;
-  width: calc(100vw - 20px);
-  height: 80vh;
+  width: calc(100vw - 150px);
+  min-height: 80vh;
 
   border-radius: 10px;
 
@@ -74,13 +71,21 @@
   padding: 20px;
 
   background-color: #ffffff;
+
+  box-shadow: 0 0 8px rgba(28, 28, 28, 0.2);
+
 }
 
-.infoPokemon h1 {
+.infoPokemon > h1 {
   border-bottom: 1px solid rgba(67, 67, 67, 0.056);
   padding-bottom: 15px;
-  margin-bottom: 25px;
+
+  margin: 25px 10px;
+
+  position: relative;
+  width: 100%;
 }
+
 
 .infoPokemon .imagemPokemon {
   border-radius: 10px;
@@ -90,6 +95,16 @@
   height: 290px;
   width: 290px;
   min-width: 290px;
+
+  margin: 0 0 0 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(175, 175, 175, 0.048);
+  border: 1px solid #dfdfdfa6;
+
 }
 
 .infoPokemon .imagemPokemon img {
@@ -98,11 +113,17 @@
 }
 
 .infoPokemon .aboutPokemon {
-  width: 100%;
-  height: 250px;
+  width: 90%;
+  min-height: 350px;
+  
+  border-radius: 5px;
+
+  margin: 10px auto;
+  padding: 20px 0;
 
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .infoPokemon .aboutPokemon ul {
@@ -111,39 +132,55 @@
   flex-direction: row;
   flex-wrap: wrap;
 
-  margin: auto;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(175, 175, 175, 0.048);
+  border: 1px solid #dfdfdfa6;
+
+  border-radius: 5px;
+
+  margin: 5px;
 
   max-width: 800px;
-  max-height: 350px;
+  max-height: 290px;
+  min-height: 290px;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea {
-  margin: 1px;
-  max-width: 300px;
-  min-width: 300px;
+  margin: 0;
+
+  padding: 0 5px;
+
+  max-width: 200px;
+  min-width: 200px;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
 
   position: relative;
+
 }
 
 .infoPokemon .aboutPokemon ul .dataArea label {
-  margin-left: 20px;
+  color: rgba(250, 54, 54, 0.85);
+  margin-bottom: 5px
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li {
-  background-color: #e1e1e187;
+  background-color: #dfdfdfa6;
+  box-shadow: 0 0 12px rgba(177, 177, 177, 0.665) inset;
   color: #fff;
 
-  width: 200px;
+  max-width: 200px;
+  min-width: 150px;
+
   height: 30px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: 15px;
 
   position: relative;
 
@@ -162,6 +199,7 @@
   transition: 0.2s;
   position: absolute;
   height: 100%;
+  box-shadow: 10px -4px 19px rgba(250, 113, 113, 0.96) inset;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li #hpProgress {
@@ -190,20 +228,30 @@
   width: 45%;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1000px) {
   .container .wrap {
     flex-direction: column;
   }
 
+
   .infoPokemon {
-    width: 95vw;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    max-width: 95vw;
+    width: calc(100vw - 20px);
+
   }
 
   .infoPokemon .aboutPokemon {
+    display: flex;
     flex-direction: column;
-    max-height: none;
-    align-items: center;
+
+    margin: 0;
+    padding: 0 0 30px 0;
+    width: 100%;
 
     position: relative;
   }
@@ -219,15 +267,14 @@
     max-width: 800px;
     max-height: fit-content;
 
-    margin: 0;
-    padding: 0;
-
     position: relative;
   }
 
   .infoPokemon .aboutPokemon ul .dataArea {
     position: relative;
     max-width: fit-content;
+
+    margin: 5px 0;
 
   }
   .infoPokemon .aboutPokemon ul .dataArea li {
@@ -240,21 +287,11 @@
   }
 
   .infoPokemon .imagemPokemon {
-    max-width: 150px;
-    max-height: 150px;
-    min-width: 150px;
-    min-height: 150px;
+    max-width: 190px;
+    max-height: 190px;
+    min-width: 190px;
+    min-height: 190px;
   }
-
-  .infoPokemon .aboutPokemon {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-
-    position: relative;
-
-  }
-
 
   .infoPokemon .aboutPokemon ul li {
     width: 100%;
@@ -269,7 +306,13 @@
 }
 
 .footer {
-  position: absolute;
+  position: relative;
 
   bottom: 0;
+  background-color: #ef192b;
+  padding: 30px 3vw;
+
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+
 }

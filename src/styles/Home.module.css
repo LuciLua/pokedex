@@ -102,8 +102,8 @@
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(175, 175, 175, 0.048);
-  border: 1px solid #dfdfdfa6;
+  /* background-color: rgba(175, 175, 175, 0.048); */
+  /* border: 1px solid #dfdfdfa6; */
 
 }
 
@@ -135,8 +135,8 @@
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(175, 175, 175, 0.048);
-  border: 1px solid #dfdfdfa6;
+  /* background-color: rgba(175, 175, 175, 0.048); */
+  /* border: 1px solid #dfdfdfa6; */
 
   border-radius: 5px;
 
@@ -169,9 +169,9 @@
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li {
-  background-color: #dfdfdfa6;
+  background-color: #dfdfdf2a;
   box-shadow: 0 0 12px rgba(177, 177, 177, 0.665) inset;
-  color: #fff;
+  color: rgb(14, 14, 14);
 
   max-width: 200px;
   min-width: 150px;
@@ -199,7 +199,7 @@
   transition: 0.2s;
   position: absolute;
   height: 100%;
-  box-shadow: 10px -4px 19px rgba(250, 113, 113, 0.96) inset;
+  box-shadow: 10px -4px 19px rgba(255, 255, 255, 0.515) inset;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li #hpProgress {
@@ -207,24 +207,24 @@
   width: 45%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #attackProgress {
-  background-color: #ef192b;
+  background-color: #efbd19;
   width: 49%;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li #defenseProgress {
-  background-color: #ef192b;
+  background-color: #63ac55;
   width: 49%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #specialAttackProgress {
-  background-color: #ef192b;
+  background-color: #a98922;
   width: 65%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #specialDefenseProgress {
-  background-color: #ef192b;
+  background-color: #429232;
   width: 65%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #speedProgress {
-  background-color: #ef192b;
+  background-color: #19bdef;
   width: 45%;
 }
 
@@ -277,6 +277,12 @@
     margin: 5px 0;
 
   }
+
+  .infoPokemon .aboutPokemon ul .dataArea label{
+    margin: 0 25px;
+
+  }
+
   .infoPokemon .aboutPokemon ul .dataArea li {
     width: calc(100vw - 120px);
     max-width: 500px;

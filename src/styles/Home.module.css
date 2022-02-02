@@ -76,7 +76,7 @@
 
 }
 
-.infoPokemon > h1 {
+.infoPokemon .aboutPokemon > h1 {
   border-bottom: 1px solid rgba(67, 67, 67, 0.056);
   padding-bottom: 15px;
 
@@ -84,9 +84,60 @@
 
   position: relative;
   width: 100%;
+
+  color: #19bdef;
 }
 
+.infoPokemon .aboutPokemon .namesPokemon{
+  color: #19bdef;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.infoPokemon .aboutPokemon .namesPokemon h1{
+  border-bottom: 1px solid #19bdef;
 
+}
+
+.infoPokemon .aboutPokemon .namesPokemon .tipoPokemon{
+  display: flex;
+  justify-content: center;
+}
+
+.infoPokemon .aboutPokemon .namesPokemon h2{
+
+  border: 1px solid #19bdef;
+  border-radius: 30px;
+  padding: 3px 20px;
+
+  margin: 10px 0;
+
+  font-size: 14px;
+}
+.infoPokemon .aboutPokemon .namesPokemon .ico{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border: 1px solid #19bdef;
+  background-color: #19bdefb0;
+  border-radius: 30px;
+  padding: 3px 13px;
+  
+  margin: 10px 5px;
+  
+  font-size: 14px;
+  
+}
+
+.infoPokemon .aboutPokemon .namesPokemon .ico::before{
+  content: 'A';
+  position: absolute;
+  color: #fff;
+}
+  
 .infoPokemon .imagemPokemon {
   border-radius: 10px;
   overflow: hidden;
@@ -164,19 +215,20 @@
 }
 
 .infoPokemon .aboutPokemon ul .dataArea label {
-  color: rgba(250, 54, 54, 0.85);
-  margin-bottom: 5px
+  color: #19bdef;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li {
-  background-color: #dfdfdf2a;
-  box-shadow: 0 0 12px rgba(177, 177, 177, 0.665) inset;
+  background-color: #eeeeee7e;
+  box-shadow: 0 0 4px rgba(177, 177, 177, 0.72) inset;
   color: rgb(14, 14, 14);
 
   max-width: 200px;
   min-width: 150px;
 
-  height: 30px;
+  height: 10px;
 
   display: flex;
   justify-content: center;
@@ -192,6 +244,8 @@
 .infoPokemon .aboutPokemon ul .dataArea li span {
   position: absolute;
   z-index: 10;
+  font-size: 10px;
+  color: #feffff;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li .progressBar {
@@ -203,24 +257,24 @@
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li #hpProgress {
-  background-color: #ef192b;
+  background-color: #19bdef;
   width: 45%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #attackProgress {
-  background-color: #efbd19;
+  background-color: #19bdef;
   width: 49%;
 }
 
 .infoPokemon .aboutPokemon ul .dataArea li #defenseProgress {
-  background-color: #63ac55;
+  background-color: #19bdef;
   width: 49%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #specialAttackProgress {
-  background-color: #a98922;
+  background-color: #19bdef;
   width: 65%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #specialDefenseProgress {
-  background-color: #429232;
+  background-color: #19bdef;
   width: 65%;
 }
 .infoPokemon .aboutPokemon ul .dataArea li #speedProgress {

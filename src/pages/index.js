@@ -73,8 +73,15 @@ export default function Home(props) {
           ))}
         </select>
         <div className={styles.infoPokemon}>
-          <h1 id={'tituloPoke'}>BULBASAUR</h1>
           <div className={styles.aboutPokemon}>
+            <div className={styles.namesPokemon}>
+              <h1 id={'tituloPoke'}>BULBASAUR</h1>
+              <div className={styles.tipoPokemon}>
+                <h2 id={'tipo'}>Água</h2>
+                <div className={styles.ico}>
+                </div>
+              </div>
+            </div>
             <div className={styles.imagemPokemon}>
               <img id={'pokeIma'} src={pokeData.sprites.other.home.front_shiny} />
             </div>
@@ -85,7 +92,7 @@ export default function Home(props) {
                 </label>
                 <li id={'hp'}>
                   <span>0</span>
-                  <div className={styles.progressBar} id={styles.hpProgress}/>
+                  <div className={styles.progressBar} id={styles.hpProgress} />
                 </li>
               </div>
               <div className={styles.dataArea}>
@@ -95,7 +102,7 @@ export default function Home(props) {
                 </label>
                 <li id={'attack'}>
                   <span>0</span>
-                  <div id={styles.attackProgress} className={styles.progressBar}/>
+                  <div id={styles.attackProgress} className={styles.progressBar} />
                 </li>
               </div>
               <div className={styles.dataArea}>
@@ -105,7 +112,7 @@ export default function Home(props) {
                 </label>
                 <li id={'defense'}>
                   <span>0</span>
-                  <div id={styles.defenseProgress} className={styles.progressBar}/>
+                  <div id={styles.defenseProgress} className={styles.progressBar} />
                 </li>
               </div>
               <div className={styles.dataArea}>
@@ -114,7 +121,7 @@ export default function Home(props) {
                 </label>
                 <li id={'specialAttack'}>
                   <span>0</span>
-                  <div id={styles.specialAttackProgress} className={styles.progressBar}/>
+                  <div id={styles.specialAttackProgress} className={styles.progressBar} />
                 </li>
               </div>
               <div className={styles.dataArea}>
@@ -124,7 +131,7 @@ export default function Home(props) {
                 </label>
                 <li id={'specialDefense'}>
                   <span>0</span>
-                  <div id={styles.specialDefenseProgress} className={styles.progressBar}/>
+                  <div id={styles.specialDefenseProgress} className={styles.progressBar} />
                 </li>
               </div>
               <div className={styles.dataArea}>
@@ -133,7 +140,7 @@ export default function Home(props) {
                 </label>
                 <li id={'speed'}>
                   <span>0</span>
-                  <div id={styles.speedProgress} className={styles.progressBar}/>
+                  <div id={styles.speedProgress} className={styles.progressBar} />
                 </li>
               </div>
             </ul>

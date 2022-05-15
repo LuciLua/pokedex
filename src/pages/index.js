@@ -2,43 +2,67 @@ import React from "react";
 import styles from "../styles/Home.module.css";
 import Link from 'next/link'
 
+import { useEffect } from 'react'
+
 var idPoked = 1
 
 export async function getStaticProps(ctx) {
 
-  const urlAllPokemons = "https://pokeapi.co/api/v2/pokedex/1/";
-  const urlData = `https://pokeapi.co/api/v2/pokemon/${idPoked}`;
+  // const urlAllPokemons = "https://pokeapi.co/api/v2/pokedex/1/";
+  // const urlData = `https://pokeapi.co/api/v2/pokemon/${idPoked}`;
 
-  const pokemons = await fetch(urlAllPokemons)
-    .then((resp) => {
-      if (resp.ok) return resp.json();
-      throw new Error('Erro!')
-    })
-    .then((json) => json.pokemon_entries);
+  // const pokemons = await fetch(urlAllPokemons)
+  //   .then((resp) => {
+  //     if (resp.ok) return resp.json();
+  //     throw new Error('Erro!')
+  //   })
+  //   .then((json) => json.pokemon_entries)
+  //   .catch(erro => console.log(erro))
 
-  const pokeData = await fetch(urlData)
-    .then((resp) => {
-      if (resp.ok) return resp.json();
-      throw new Error('Erro!')
-    })
-    .then((json) => json);
+  // const pokeData = await fetch(urlData)
+  //   .then((resp) => {
+  //     if (resp.ok) return resp.json();
+  //     throw new Error('Erro!')
+  //   })
+  //   .then((json) => json)
+  //   .catch(erro => console.log(erro))
+
+  const pokemons = [
+    {
+      pokemon_species: {
+        name: "Ovossauro"
+      },
+      entry_number: 1
+    },
+    {
+      pokemon_species: {
+        name: "Pokedinop"
+      },
+      entry_number: 2
+
+    }
+  ]
+  const pokeData = "dataPoke"
 
   return {
     props: { pokemons, pokeData },
   };
+
 }
 
-export default function Home(props) {
+export default function Home(props) {  
+  
+  useEffect(() => {
+    poke()
+  }, [])
 
   const { pokemons, pokeData } = props;
 
-  function poke(e) {
-    var select = e.target
-    var nome = select.options[select.selectedIndex].text
-
-    var hpProgress = document.getElementById(styles.hpProgress)
-
+  function poke() {
+    
     var tituloPokemon = document.getElementById('tituloPoke')
+    var select = document.getElementById('escolhaPokemon')
+    var hpProgress = document.getElementById(styles.hpProgress)
     var hp = document.getElementById('hp')
     var attack = document.getElementById('attack')
     var defense = document.getElementById('defense')
@@ -46,14 +70,15 @@ export default function Home(props) {
     var specialDefense = document.getElementById('specialDefense')
     var speed = document.getElementById('speed')
 
+    var nome = select.options[select.selectedIndex].text
     tituloPokemon.innerHTML = nome.toUpperCase()
 
-    hp.innerHTML = pokeData.stats[0].base_stat
-    attack.innerHTML = pokeData.stats[1].base_stat
-    defense.innerHTML = pokeData.stats[2].base_stat
-    specialAttack.innerHTML = pokeData.stats[3].base_stat
-    specialDefense.innerHTML = pokeData.stats[4].base_stat
-    speed.innerHTML = pokeData.stats[5].base_stat
+    // hp.innerHTML = pokeData.stats[0].base_stat
+    // attack.innerHTML = pokeData.stats[1].base_stat
+    // defense.innerHTML = pokeData.stats[2].base_stat
+    // specialAttack.innerHTML = pokeData.stats[3].base_stat
+    // specialDefense.innerHTML = pokeData.stats[4].base_stat
+    // speed.innerHTML = pokeData.stats[5].base_stat
 
   }
 
@@ -66,6 +91,7 @@ export default function Home(props) {
       <div className={styles.container}>
         <h1>Pokedéx</h1>
         <select id='escolhaPokemon' onChange={poke}>
+          {/* <select id='escolhaPokemon'> */}
           {pokemons.map((pokemon) => (
             <option key={pokemon.entry_number} value={pokemon}>
               {pokemon.pokemon_species.name}
@@ -83,7 +109,7 @@ export default function Home(props) {
               </div>
             </div>
             <div className={styles.imagemPokemon}>
-              <img id={'pokeIma'} src={pokeData.sprites.other.home.front_shiny} />
+              {/* <img id={'pokeIma'} src={pokeData.sprites.other.home.front_shiny} /> */}
             </div>
             <ul>
               <div className={styles.dataArea}>

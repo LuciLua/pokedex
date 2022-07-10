@@ -1,13 +1,11 @@
 import React from "react";
-import styles from "../styles/Home.module.css";
-import Link from 'next/link'
+import styles from "../styles/Home.module.scss";
 
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
-var idPoked = 1
+var idPoked = 1;
 
 export async function getStaticProps(ctx) {
-
   // const urlAllPokemons = "https://pokeapi.co/api/v2/pokedex/1/";
   // const urlData = `https://pokeapi.co/api/v2/pokemon/${idPoked}`;
 
@@ -30,48 +28,44 @@ export async function getStaticProps(ctx) {
   const pokemons = [
     {
       pokemon_species: {
-        name: "Ovossauro"
+        name: "Ovossauro",
       },
-      entry_number: 1
+      entry_number: 1,
     },
     {
       pokemon_species: {
-        name: "Pokedinop"
+        name: "Pokedinop",
       },
-      entry_number: 2
-
-    }
-  ]
-  const pokeData = "dataPoke"
+      entry_number: 2,
+    },
+  ];
+  const pokeData = "dataPoke";
 
   return {
     props: { pokemons, pokeData },
   };
-
 }
 
-export default function Home(props) {  
-  
+export default function Home(props) {
   useEffect(() => {
-    poke()
-  }, [])
+    poke();
+  }, []);
 
   const { pokemons, pokeData } = props;
 
   function poke() {
-    
-    var tituloPokemon = document.getElementById('tituloPoke')
-    var select = document.getElementById('escolhaPokemon')
-    var hpProgress = document.getElementById(styles.hpProgress)
-    var hp = document.getElementById('hp')
-    var attack = document.getElementById('attack')
-    var defense = document.getElementById('defense')
-    var specialAttack = document.getElementById('specialAttack')
-    var specialDefense = document.getElementById('specialDefense')
-    var speed = document.getElementById('speed')
+    var tituloPokemon = document.getElementById("tituloPoke");
+    var select = document.getElementById("escolhaPokemon");
+    var hpProgress = document.getElementById(styles.hpProgress);
+    var hp = document.getElementById("hp");
+    var attack = document.getElementById("attack");
+    var defense = document.getElementById("defense");
+    var specialAttack = document.getElementById("specialAttack");
+    var specialDefense = document.getElementById("specialDefense");
+    var speed = document.getElementById("speed");
 
-    var nome = select.options[select.selectedIndex].text
-    tituloPokemon.innerHTML = nome.toUpperCase()
+    var nome = select.options[select.selectedIndex].text;
+    tituloPokemon.innerHTML = nome.toUpperCase();
 
     // hp.innerHTML = pokeData.stats[0].base_stat
     // attack.innerHTML = pokeData.stats[1].base_stat
@@ -79,18 +73,16 @@ export default function Home(props) {
     // specialAttack.innerHTML = pokeData.stats[3].base_stat
     // specialDefense.innerHTML = pokeData.stats[4].base_stat
     // speed.innerHTML = pokeData.stats[5].base_stat
-
   }
 
   // var novoLink = urlData.replace(idPoked, novoPoke)
   // document.getElementById('pokeIma').src = novoLink
 
-
   return (
     <>
       <div className={styles.container}>
         <h1>Pokedéx</h1>
-        <select id='escolhaPokemon' onChange={poke}>
+        <select id="escolhaPokemon" onChange={poke}>
           {/* <select id='escolhaPokemon'> */}
           {pokemons.map((pokemon) => (
             <option key={pokemon.entry_number} value={pokemon}>
@@ -101,11 +93,10 @@ export default function Home(props) {
         <div className={styles.infoPokemon}>
           <div className={styles.aboutPokemon}>
             <div className={styles.namesPokemon}>
-              <h1 id={'tituloPoke'}>BULBASAUR</h1>
+              <h1 id={"tituloPoke"}>BULBASAUR</h1>
               <div className={styles.tipoPokemon}>
-                <h2 id={'tipo'}>Água</h2>
-                <div className={styles.ico}>
-                </div>
+                <h2 id={"tipo"}>Água</h2>
+                <div className={styles.ico}></div>
               </div>
             </div>
             <div className={styles.imagemPokemon}>
@@ -113,60 +104,60 @@ export default function Home(props) {
             </div>
             <ul>
               <div className={styles.dataArea}>
-                <label htmlFor="hp">
-                  HP
-                </label>
-                <li id={'hp'}>
+                <label htmlFor="hp">HP</label>
+                <li id={"hp"}>
                   <span>0</span>
                   <div className={styles.progressBar} id={styles.hpProgress} />
                 </li>
               </div>
               <div className={styles.dataArea}>
-
-                <label htmlFor="attack">
-                  Attack
-                </label>
-                <li id={'attack'}>
+                <label htmlFor="attack">Attack</label>
+                <li id={"attack"}>
                   <span>0</span>
-                  <div id={styles.attackProgress} className={styles.progressBar} />
+                  <div
+                    id={styles.attackProgress}
+                    className={styles.progressBar}
+                  />
                 </li>
               </div>
               <div className={styles.dataArea}>
-
-                <label htmlFor="defense">
-                  Defense
-                </label>
-                <li id={'defense'}>
+                <label htmlFor="defense">Defense</label>
+                <li id={"defense"}>
                   <span>0</span>
-                  <div id={styles.defenseProgress} className={styles.progressBar} />
+                  <div
+                    id={styles.defenseProgress}
+                    className={styles.progressBar}
+                  />
                 </li>
               </div>
               <div className={styles.dataArea}>
-                <label htmlFor="specialAttack">
-                  Special Attack
-                </label>
-                <li id={'specialAttack'}>
+                <label htmlFor="specialAttack">Special Attack</label>
+                <li id={"specialAttack"}>
                   <span>0</span>
-                  <div id={styles.specialAttackProgress} className={styles.progressBar} />
+                  <div
+                    id={styles.specialAttackProgress}
+                    className={styles.progressBar}
+                  />
                 </li>
               </div>
               <div className={styles.dataArea}>
-
-                <label htmlFor="specialDefense">
-                  Special Defense
-                </label>
-                <li id={'specialDefense'}>
+                <label htmlFor="specialDefense">Special Defense</label>
+                <li id={"specialDefense"}>
                   <span>0</span>
-                  <div id={styles.specialDefenseProgress} className={styles.progressBar} />
+                  <div
+                    id={styles.specialDefenseProgress}
+                    className={styles.progressBar}
+                  />
                 </li>
               </div>
               <div className={styles.dataArea}>
-                <label htmlFor="speed">
-                  Speed
-                </label>
-                <li id={'speed'}>
+                <label htmlFor="speed">Speed</label>
+                <li id={"speed"}>
                   <span>0</span>
-                  <div id={styles.speedProgress} className={styles.progressBar} />
+                  <div
+                    id={styles.speedProgress}
+                    className={styles.progressBar}
+                  />
                 </li>
               </div>
             </ul>
@@ -174,9 +165,7 @@ export default function Home(props) {
           <h1>Info</h1>
         </div>
       </div>
-      <footer className={styles.footer}>
-        LuciLua@2021
-      </footer>
+      <footer className={styles.footer}>LuciLua@2021</footer>
     </>
   );
 }

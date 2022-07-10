@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/Home.module.css";
-import Link from 'next/link'
+import styles from "../styles/Home.module.scss";
+import Link from "next/link";
 
 export async function getStaticProps(ctx) {
   return {
@@ -13,12 +13,12 @@ export default function Home(props) {
     <>
       <div className={styles.container}>
         <h1>Pokedéx</h1>
-          <Link href="/about">
-            <a>Sobre o projeto</a>
-          </Link>
-         <Link href="/">
-            <a>Home</a>
-          </Link>
+        <Link href="/about">
+          <a>Sobre o projeto</a>
+        </Link>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
         <div className={styles.wrap}>
           <div>
             <h1>Sobre</h1>

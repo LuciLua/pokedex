@@ -9,8 +9,10 @@
 :root {
   --footer-height: 80px;
   --header-height: 120px;
+  --selector-height: 30px;
   --main-height: calc(
-    100vh - calc(var(--footer-height) + var(--header-height))
+    100vh -
+      calc(var(--footer-height) + var(--header-height) + var(--selector-height))
   );
 }
 

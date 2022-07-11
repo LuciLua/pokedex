@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import PokeInfo from "../components/Pokeinfo/PokeInfo";
 import Footer from "../components/Footer/Footer";
 import Image from "next/image";
+import Selector from "../components/Selector/Selector";
 
 var idPoked = 1;
 
@@ -20,6 +21,7 @@ function Home() {
   return (
     <>
       <div className={styles.container}>
+        <Selector />
         <PokeInfo />
       </div>
     </>

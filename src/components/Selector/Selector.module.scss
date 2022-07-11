@@ -1,0 +1,50 @@
+.selectorContainer {
+  background: linear-gradient(#c8fbc8, rgb(77, 178, 178));
+
+  height: 100%;
+  width: 100%;
+
+  max-width: 900px;
+  min-height: var(--selector-height);
+  height: var(--selector-height);
+
+  box-shadow: 0 0 7px rgba(79, 146, 135, 0.815);
+  border-radius: 10px;
+
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #3f956e;
+
+  label {
+    margin: 20px;
+    span {
+      margin-right: 10px;
+    }
+    select {
+      background-color: #3f956e;
+      border: none;
+      border-radius: 5px;
+      height: 20px;
+      width: 40px;
+
+      text-align: center;
+      color: #fff;
+
+      &:focus {
+        outline: #87ddb7 1px solid;
+      }
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  .pokeInfoTable {
+    //   flex-direction: column;
+    width: 100%;
+  }
+}

@@ -4,9 +4,12 @@
   width: 100%;
   height: var(--footer-height);
 
-  background-color: #ef192b;
-  color: #fff;
-  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(105, 177, 141);
+  background: linear-gradient(120deg, rgb(77, 178, 178), #c8fbc8);
+
+  color: rgb(21, 40, 21);
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   display: flex;
   justify-content: center;

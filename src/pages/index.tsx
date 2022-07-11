@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 import { useEffect } from "react";
 import PokeInfo from "../components/Pokeinfo/PokeInfo";
 import Footer from "../components/Footer/Footer";
+import Image from "next/image";
 
 var idPoked = 1;
 
@@ -20,7 +21,6 @@ function Home() {
     <>
       <div className={styles.container}>
         <PokeInfo />
-        <Footer />
       </div>
     </>
   );

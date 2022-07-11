@@ -8,5 +8,22 @@
 
 :root {
   --footer-height: 80px;
-  --main-height: calc(100vh - var(--footer-height));
+  --header-height: 120px;
+  --main-height: calc(
+    100vh - calc(var(--footer-height) + var(--header-height))
+  );
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+
+  filter: blur(10px);
 }

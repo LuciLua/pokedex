@@ -1,0 +1,16 @@
+.footer {
+  position: relative;
+
+  width: 100%;
+  height: var(--footer-height);
+
+  background-color: #ef192b;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: auto;
+}

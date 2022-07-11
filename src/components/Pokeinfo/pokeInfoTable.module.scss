@@ -1,0 +1,26 @@
+.pokeInfoTable {
+  height: 100%;
+  width: 100%;
+  max-height: fit-content;
+
+  max-width: 900px;
+  min-height: 400px;
+  box-shadow: 0 0 7px rgba(79, 146, 135, 0.815);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+
+  overflow: hidden;
+
+  margin: 10px 0;
+
+  position: relative;
+}
+
+@media (max-width: 810px) {
+  .pokeInfoTable {
+    flex-direction: column;
+    width: 100%;
+  }
+}

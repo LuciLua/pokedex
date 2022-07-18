@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
 
-  max-width: 900px;
+  max-width: 800px;
   min-height: var(--selector-height);
   height: var(--selector-height);
 
@@ -12,9 +12,9 @@
   border-radius: 10px;
 
   margin-top: 10px;
+  margin-bottom: 11px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
 
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -44,7 +44,14 @@
 
 @media (max-width: 810px) {
   .pokeInfoTable {
-    //   flex-direction: column;
+    // flex-direction: column;
     width: 100%;
+  }
+
+  .selectorContainer {
+    max-width: 500px;
+    background: #00000025;
+
+    box-shadow: none;
   }
 }

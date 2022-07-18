@@ -6,7 +6,7 @@ import "../styles/globals.scss";
 function MyApp({ Component, pageProps }) {
   return (
     <div className="wrap">
-      <Image className="background" layout="fill" src="/artwork_test.png" />
+      {/* <Image className="background" layout="fill" src="/artwork_test.png" /> */}
       <Header />
       <Component {...pageProps} />
       <Footer />

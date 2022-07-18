@@ -5,10 +5,16 @@ import InfoImagePoke from "./InfoImagePoke";
 function PokeImage() {
   return (
     <div className={styles.containerImgBox}>
-      <div className={styles.imgBox}>
-        <Image layout="fill" src="/poke_test.png" />
+      <div className={styles.card}>
+        <header>
+          <p>name Pokemon</p>
+          <div className={styles.logo}></div>
+        </header>
+        <div className={styles.imgBox}>
+          <Image objectFit="cover" layout="fill" src="/poke_test.png" />
+        </div>
+        <InfoImagePoke />
       </div>
-      <InfoImagePoke />
     </div>
   );
 }

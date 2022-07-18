@@ -6,7 +6,7 @@ import styles from "./pokeInfoTable.module.scss";
 function PokeInfo() {
   return (
     <div className={styles.pokeInfoTable}>
-      <PokeImage />
+        <PokeImage />
       <PokeAbout />
     </div>
   );

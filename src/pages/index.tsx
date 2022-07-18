@@ -19,12 +19,10 @@ export async function getStaticProps(ctx) {
 
 function Home() {
   return (
-    <>
-      <div className={styles.container}>
-        <Selector />
-        <PokeInfo />
-      </div>
-    </>
+    <div className={styles.container}>
+      <Selector />
+      <PokeInfo />
+    </div>
   );
 }
 

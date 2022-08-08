@@ -1,11 +1,16 @@
+import usePokemon from "../../../hooks/usePokemon";
 import styles from "./PokeAbout.module.scss";
 
-function PokeAbout() {
+function PokeAbout({param}) {
+  
+  const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon/3")
+  // console.log(data)
+
   return (
     <>
       <div className={styles.containerAbout}>
         <div className={styles.header}>
-          <h1>Pokemon</h1>
+          <h1>{param}</h1>
           <h2>tipo de pokemon</h2>
         </div>
         <div className={styles.body}>

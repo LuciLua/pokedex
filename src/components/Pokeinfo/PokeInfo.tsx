@@ -3,11 +3,11 @@ import PokeAbout from "./PokeAbout/PokeAbout";
 
 import styles from "./pokeInfoTable.module.scss";
 
-function PokeInfo() {
+function PokeInfo({param}) {
   return (
     <div className={styles.pokeInfoTable}>
         <PokeImage />
-      <PokeAbout />
+      <PokeAbout param={param} />
     </div>
   );
 }

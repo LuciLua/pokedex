@@ -1,27 +1,30 @@
 import React from "react";
 import styles from "../styles/Home.module.scss";
 
-import { useEffect } from "react";
 import PokeInfo from "../components/Pokeinfo/PokeInfo";
-import Footer from "../components/Footer/Footer";
-import Image from "next/image";
 import Selector from "../components/Selector/Selector";
+import usePokemon from "../hooks/usePokemon";
 
 var idPoked = 1;
 
 export async function getStaticProps(ctx) {
-  // const urlAllPokemons = "https://pokeapi.co/api/v2/pokedex/1/";
-  // const urlData = `https://pokeapi.co/api/v2/pokemon/${idPoked}`;
+  // const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon-species/")
+const data = 'Pokemnone!' 
+  // console.log([data])
+
   return {
-    props: {},
-  };
+    props: {
+      data: data,
+    }
+  }
 }
 
-function Home() {
+function Home({ data }) {
+
   return (
     <div className={styles.container}>
-      <Selector />
-      <PokeInfo />
+      <Selector param={data} />
+      <PokeInfo param={data} />
     </div>
   );
 }

@@ -30,13 +30,22 @@
       border: none;
       border-radius: 5px;
       height: 20px;
-      width: 40px;
+      width: fit-content;
+
+      box-shadow: 0 0 5px inset rgba(255, 255, 0, 0.363);
 
       text-align: center;
       color: #fff;
 
+      outline: none;
+
       &:focus {
         outline: #87ddb7 1px solid;
+      }
+
+      option {
+        color: #fff;
+        outline: none;
       }
     }
   }

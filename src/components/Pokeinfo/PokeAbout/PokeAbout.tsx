@@ -3,7 +3,7 @@ import styles from "./PokeAbout.module.scss";
 
 function PokeAbout({param}) {
   
-  const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon/3")
+  // const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon/3")
   // console.log(data)
 
   return (

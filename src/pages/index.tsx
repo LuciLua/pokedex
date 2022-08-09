@@ -1,30 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
 
 import PokeInfo from "../components/Pokeinfo/PokeInfo";
 import Selector from "../components/Selector/Selector";
 import usePokemon from "../hooks/usePokemon";
 
-var idPoked = 1;
+function Home() {
 
-export async function getStaticProps(ctx) {
   // const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon-species/")
-const data = 'Pokemnone!' 
-  // console.log([data])
+  const [pokemons, setPokemons] = useState([])
 
-  return {
-    props: {
-      data: data,
-    }
-  }
-}
+  useEffect(() => {
 
-function Home({ data }) {
+    // const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon-species/")
+    // setPokemons(data)
+    console.log(pokemons)
+
+    fetch("https://pokeapi.co/api/v2/pokemon-species/")
+      .then(resp => resp.json())
+      .then(json => setPokemons(json.results))
+      .catch(err => console.log(err))
+
+  }, [])
+
+  const choice = 3
 
   return (
     <div className={styles.container}>
-      <Selector param={data} />
-      <PokeInfo param={data} />
+      <Selector param={pokemons.map(pm => pm.name)} ch={choice} />
+      <p>{choice}</p>
+      {
+        pokemons[choice] ?
+          <PokeInfo param={pokemons[choice].name} />
+          :
+          <PokeInfo param={'Carregando...'}/>
+      }
     </div>
   );
 }

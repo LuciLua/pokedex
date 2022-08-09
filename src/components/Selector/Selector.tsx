@@ -1,9 +1,13 @@
 import { useEffect } from "react";
-import usePokemon from "../../hooks/usePokemon";
 import styles from "./Selector.module.scss";
 
+function Selector({ param, ch }) {
 
-function Selector({ param }) {
+  function clicado(e) {
+    // console.log(e.target.value)
+    ch = e.target.value
+    // console.log(ch)
+  }
 
   return (
     <div className={styles.selectorContainer}>
@@ -17,14 +21,20 @@ function Selector({ param }) {
       </label>
       <label htmlFor="Pokemon">
         <span>Pokemon:</span>
-        <select name="pokemon" id="pokemon">
-          {/* {
-            data.map(pokemon => {
+
+        <select name="pokemon" id="pokemon"
+          onChange={(e) => {
+            clicado(e)
+          }}>
+          {
+            param.map(pokemon => {
               return (
-                <option value={pokemon.name} key={pokemon.name}>{pokemon.name}</option>
+                <option
+                  value={pokemon}
+                  key={pokemon}>{pokemon}</option>
               )
             })
-          } */}
+          }
         </select>
       </label>
     </div>

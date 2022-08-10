@@ -3,17 +3,12 @@ import styles from "../styles/Home.module.scss";
 
 import PokeInfo from "../components/Pokeinfo/PokeInfo";
 import Selector from "../components/Selector/Selector";
-import usePokemon from "../hooks/usePokemon";
 
 function Home() {
 
-  // const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon-species/")
   const [pokemons, setPokemons] = useState([])
 
   useEffect(() => {
-
-    // const [data] = usePokemon("https://pokeapi.co/api/v2/pokemon-species/")
-    // setPokemons(data)
     console.log(pokemons)
 
     fetch("https://pokeapi.co/api/v2/pokemon-species/")

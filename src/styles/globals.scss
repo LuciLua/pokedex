@@ -14,6 +14,11 @@
     100vh -
       calc(var(--footer-height) + var(--header-height) + var(--selector-height))
   );
+
+  --primary-color: #46aae4;
+  --secondary-color: #22365d;
+  --primary-hover-color: #282d57;
+  --secondary-hover-color: #1b103a;
 }
 
 .wrap {

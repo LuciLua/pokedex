@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
 
-  background: linear-gradient(rgb(77, 178, 178), #c8fbc8);
+  background: linear-gradient(var(--primary-color), var(--secondary-color));
 
   padding: 15px;
 
@@ -20,8 +20,8 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #dcfa82;
-    border: 10px solid #7db972;
+    background-color: var(--secondary-color);
+    border: 10px solid var(--primary-hover-color);
     border-radius: 9px;
 
     position: relative;
@@ -38,7 +38,7 @@
         padding: 10px;
         border-radius: 6px;
         width: 80%;
-        background-color: rgba(37, 225, 81, 0.581);
+        background-color: var(--primary-color);
         color: #2d2d2d;
         
         display: flex;
@@ -49,7 +49,7 @@
 
       .logo {
         width: 40px;
-        background-color: rgba(37, 225, 81, 0.581);
+        background-color: var(--primary-color);
         height: 40px;
 
         border-radius: 6px;
@@ -57,11 +57,11 @@
     }
 
     .infos {
-      background: linear-gradient(rgba(104, 246, 145, 0.511), #ffb48891);
+      background: var(--primary-color);
       box-shadow: 1px 1px 5px #39463f2e;
 
       width: 100%;
-      padding: 5px;
+      padding: 10px;
 
       display: flex;
       justify-content: center;
@@ -71,7 +71,7 @@
       border-radius: 6px;
 
       label {
-        background-color: rgba(110, 199, 125, 0.382);
+        background: var(--primary-hover-color);
         width: 100%;
         padding: 6px;
         border-radius: 5px;
@@ -83,17 +83,17 @@
           margin-left: 4px;
           font-family: Arial;
           font-size: 10px;
-          color: #244632;
+          color: #0040ff;
 
           position: absolute;
           z-index: 10;
-          bottom: 6px;
+          bottom: 8px;
         }
 
         .infoBar {
           border: 1px solid #4abd33c6;
           border-radius: 30px;
-          height: 10px;
+          height: 15px;
           width: 100%;
           margin-top: 2px;
 
@@ -126,7 +126,7 @@
       justify-content: center;
       align-items: center;
 
-      background: radial-gradient(rgb(255, 255, 255) 10%, transparent 60%);
+      background: radial-gradient(rgba(255, 255, 255, 0.43) 20%, transparent 80%);
     }
   }
 }

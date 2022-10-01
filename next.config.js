@@ -1,3 +1,8 @@
 module.exports = {
-    TrailingSlash: true
+    TrailingSlash: true,
+    images: {
+        domains: [
+            'raw.githubusercontent.com'
+        ]
+    }
 }

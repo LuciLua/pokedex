@@ -7,6 +7,7 @@
 }
 
 :root {
+  --max-width: 1300px;
   --footer-height: 80px;
   --header-height: 120px;
   --selector-height: 30px;
@@ -26,7 +27,7 @@
   display: flex;
   flex-direction: column;
 
-  background: linear-gradient(rgb(6, 50, 145), rgb(176, 39, 66));
+  background: linear-gradient(rgb(213, 131, 73), rgb(107, 45, 27));
   background-size: 100%;
 }
 

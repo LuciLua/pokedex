@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  background-color: rgb(150, 70, 70);
+  min-height: 300px;
+
+  max-width: var(--max-width);
+
+  z-index: 2;
+
+  position: relative;
+}

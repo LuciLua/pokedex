@@ -5,28 +5,27 @@ import styles from "../styles/Home.module.scss";
 function Home() {
 
   const [pokemons, setPokemons] = useState([])
-  const [mainPokemon, setMainPokemon] = useState("/")
+  const [mainPokemon, setMainPokemon] = useState({})
 
   useEffect(() => {
-    console.log(pokemons)
 
-    fetch("https://pokeapi.co/api/v2/pokemon/97/")
+    // pikachu
+    fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
       .then(resp => resp.json())
-      .then(json => {
-        setMainPokemon(json.sprites.other.home.front_shiny_female)
-      })
+      .then(json => setMainPokemon(json))
+      .catch(err => console.log(err))
 
+    // pokemons
     fetch("https://pokeapi.co/api/v2/pokemon")
       .then(resp => resp.json())
       .then(json => setPokemons(json.results))
       .catch(err => console.log(err))
-  }, [])
 
-  const choice = 3
+  }, [])
 
   return (
     <div className={styles.container}>
-      <Main mainPokemon={mainPokemon}/>
+      <Main mainPokemon={mainPokemon} pokemons={pokemons} />
     </div>
   );
 }

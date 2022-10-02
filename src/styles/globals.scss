@@ -17,7 +17,7 @@
   );
 
   --primary-color: #46aae4;
-  --secondary-color: #22365d;
+  --secondary-color: rgb(39, 8, 112);
   --primary-hover-color: #282d57;
   --secondary-hover-color: #1b103a;
 }
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
 
-  background: linear-gradient(rgb(213, 131, 73), rgb(107, 45, 27));
+  background: linear-gradient(rgb(233, 101, 8), rgb(229, 128, 99));
   background-size: 100%;
 }
 

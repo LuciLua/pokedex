@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocumnent extends Document {
   render() {
-    const googleFonts = "https://fonts.googleapis.com/css2?family=Inter&family=Lexend:wght@500;600&display=swap&Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap";
+    const googleFonts = "https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@100;400;700;800;900&display=swap";
     return (
       <Html>
         <Head>

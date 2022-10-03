@@ -31,10 +31,10 @@ function InitialView({ mainPokemon }) {
                         </div>
                         <div className={stylesInitialView.attributes}>
                             <div className={stylesInitialView.atbBox}>
-                                <span><AiFillFire /></span> <span>Attrib A</span>
+                                <span><AiFillFire /></span> <span>Water</span>
                             </div>
                             <div className={stylesInitialView.atbBox}>
-                                <span><AiFillApple /></span> <span>Attrib B</span>
+                                <span><AiFillApple /></span> <span>Fire</span>
                             </div>
                         </div>
                         <div className={stylesInitialView.name}>

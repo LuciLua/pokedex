@@ -5,6 +5,16 @@ import stylesPokemonSelector from "./styles/PokemonSelector.module.scss"
 import stylesPokemonContainer from "./styles/PokemonContainer.module.scss"
 
 import { useEffect, useState } from "react"
+import PokemonCard from "./PokemonCard/PokemonCard"
+import { Pokemon } from "../../types/Pokemon"
+
+
+// import PokemonCard from "./PokemonCard/PokemonCard"
+// import { Pokemon } from "../../types/Pokemon"
+// import { pokemonTypes } from "../../pokemonTypes"
+// import { fetchPokemon } from "../../api/fetchPokemon";
+// import { Pokemon } from "../../types/Pokemon"
+// import { fetchPokemonList } from "../../api/fetchPokemonList"
 
 function InitialView({ mainPokemon }) {
 
@@ -76,32 +86,59 @@ function Selector() {
     )
 
 }
-function PokemonsContainer({ pokemons }) {
+
+type PokedexProps = {
+    testList: Pokemon[];
+    // pokemon: Pokemon;
+    // pokemonList: Pokemon[];
+};
+
+function Pokedex(props: PokedexProps) {
+
+    // const requestPokemon = await fetchPokemon(props.pokemon.name);
+    // props.setPokemonData(requestPokemon.data);
+    // props.setModal(true);
+
     return (
         <div className={stylesPokemonContainer.container}>
             <div className={stylesPokemonContainer.content}>
                 <div className={stylesPokemonContainer.cards}>
-
-                    {pokemons.map(pokemon => {
-                        // let id = (pokemon.url).slice(-2, -1)
-                        return (
-                            <div key={pokemon.name} className={stylesPokemonContainer.card}>
-                                <h1>{pokemon.name}</h1>
-                            </div>
-                        )
-                    })}
+                    {
+                        props.testList.map((pokemon) => {
+                            return (
+                                <PokemonCard
+                                key={pokemon.id}
+                                name={pokemon.name}
+                                // setModal={props.setModal}
+                                // setPokemonData={props.setPokemonData}
+                                />
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>
     )
 }
 
-function Main({ mainPokemon, pokemons }) {
+function Main({ mainPokemon, pokemonList }) {
+
+    // const [modal, setModal] = useState(false);
+    // const [pokemonData, setPokemonData] = useState<Pokemon>();
+    // const [pokemonAmount, setPokemonAmount] = useState(9);
+    // const [error, setError] = useState(false);
+    // const [loading, setLoading] = useState(false);
+    // const [page, setPage] = useState(1);
+    // const [showPagination, setShowPagination] = useState(true);
+    // const [disabledButton, setDisabledButton] = useState(false);
+    // const searchBarRef = useRef<HTMLDivElement>(null);
+
+
     return (
         <>
             <InitialView mainPokemon={mainPokemon} />
             <Selector />
-            <PokemonsContainer pokemons={pokemons} />
+            <Pokedex testList={pokemonList} />
         </>
     )
 }

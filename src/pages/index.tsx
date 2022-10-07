@@ -31,18 +31,12 @@ function Home() {
       .catch(err => console.log(err))
 
   }, [])
-
-
-
+  
   useEffect(() => {
-    setPokemonList(pokemones)
-  }, [])
-
-  // useEffect(() => {
-  //   (async () => {
-  //     setPokemonList(await fetchPokemonList(1));
-  //   })();
-  // }, []);
+    (async () => {
+      setPokemonList(await fetchPokemonList(1));
+    })();
+  }, []);
 
 
 

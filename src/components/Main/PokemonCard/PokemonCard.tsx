@@ -2,9 +2,15 @@ import { fetchPokemon } from "../../../api/fetchPokemon";
 import { pokemonTypes } from "../../../pokemonTypes";
 import { Pokemon } from "../../../types/Pokemon";
 import { PokemonType } from "../PokemonType/PokemonType";
+import  PokemonCardStyle  from "../styles/PokemonCard.module.scss";
 
 type PokemonCardProps = {
+    id: number;
     name: string;
+    types: [{ type: { name: string } }];
+    weight: number;
+    height: number;
+    stats?: [{ base_stat: number; stat: { name: string } }];
     // pokemon: Pokemon;
     // setModal: (value: boolean) => void;
     // setPokemonData: (data: Pokemon) => void;
@@ -32,14 +38,15 @@ function PokemonCard(props: PokemonCardProps) {
 
     return (
         <>
-            <div>
-                <h1>aaa</h1>
-                <h1>{props.name}</h1>
-                {/* {props.pokemon.name} */}
+            <div className={PokemonCardStyle.card}>
+                <h1>id - {props.id}</h1>
+                <h1>name - {props.name}</h1>
+                <h1>types - {props.types[0].type.name}</h1>
+                <h1>weight - {props.weight}</h1>
+                <h1>height - {props.height}</h1>
+                <h1>base_stat - {props.stats[0].base_stat}</h1>
+                <h1>stat - {props.stats[0].stat.name}</h1>
             </div>
-            {/* {props.pokemon.types.map(({ type }) => ( */}
-            {/* <PokemonType key={type.name} type={type.name} tabIndex={false} /> */}
-            {/* ))} */}
         </>
     )
 }

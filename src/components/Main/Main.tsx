@@ -88,7 +88,7 @@ function Selector() {
 }
 
 type PokedexProps = {
-    testList: Pokemon[];
+    pokemonList: Pokemon[];
     // pokemon: Pokemon;
     // pokemonList: Pokemon[];
 };
@@ -104,11 +104,16 @@ function Pokedex(props: PokedexProps) {
             <div className={stylesPokemonContainer.content}>
                 <div className={stylesPokemonContainer.cards}>
                     {
-                        props.testList.map((pokemon) => {
+                        props.pokemonList.map((pokemon) => {
                             return (
                                 <PokemonCard
-                                key={pokemon.id}
-                                name={pokemon.name}
+                                    id={pokemon.id}
+                                    key={pokemon.id}
+                                    name={pokemon.name}
+                                    types={[{ type: { name: pokemon.types[0].type.name } }]}
+                                    height={pokemon.height}
+                                    weight={pokemon.weight}
+                                    stats={[{ base_stat: pokemon.stats[0].base_stat, stat: { name: pokemon.stats[0].stat.name } }]}
                                 // setModal={props.setModal}
                                 // setPokemonData={props.setPokemonData}
                                 />
@@ -138,7 +143,7 @@ function Main({ mainPokemon, pokemonList }) {
         <>
             <InitialView mainPokemon={mainPokemon} />
             <Selector />
-            <Pokedex testList={pokemonList} />
+            <Pokedex pokemonList={pokemonList} />
         </>
     )
 }

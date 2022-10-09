@@ -8,20 +8,7 @@ import { fetchPokemonList } from "../api/fetchPokemonList";
 function Home() {
 
   const [mainPokemon, setMainPokemon] = useState({})
-  // const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [pokemonList, setPokemonList] = useState<any>([]);
-
-  const pokemones = [
-    {
-      id: 1,
-      name: 'testeee',
-      types: [{ type: { name: 'fire' } }],
-      weight: 123,
-      height: 222,
-      stats: [{ base_stat: 12, stat: { name: 'stringteste' } }]
-    }
-  ]
-
 
   useEffect(() => {
     // pikachu
@@ -29,7 +16,6 @@ function Home() {
       .then(resp => resp.json())
       .then(json => setMainPokemon(json))
       .catch(err => console.log(err))
-
   }, [])
   
   useEffect(() => {
@@ -37,8 +23,6 @@ function Home() {
       setPokemonList(await fetchPokemonList(1));
     })();
   }, []);
-
-
 
   return (
     <div className={styles.container}>

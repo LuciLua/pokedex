@@ -23,8 +23,7 @@ function PokemonCard(props: PokemonCardProps) {
 
     const [{ color }] = pokemonTypes.filter(
         (type) => props.pokemon.types[0].type.name.indexOf(type.name) !== -1
-    );
-
+    )
     // const handleClick = async () => {
     //     const requestPokemon = await fetchPokemon(props.pokemon.name);
     //     props.setPokemonData(requestPokemon.data);
@@ -38,44 +37,52 @@ function PokemonCard(props: PokemonCardProps) {
     // };
 
     return (
-        <>
-            <div className={styles.card}>
-                <div className={styles.infoTXT_container}>
-                    <p>#{props.id}</p>
-                    <h1>{props.name}</h1>
+        <div className={styles.card}>
+            <div className={styles.infoTXT_container}>
+                <p>#{props.id}</p>
+                <h1>{props.name}</h1>
+            </div>
+            <div className={styles.infoTYPE_container}>
+
+                {props.pokemon.types.map((type) => {
+
+                    return (
+                        <p
+                            key={type.type.name}
+                            className={styles.infoTYPE}
+                            style={{ "background": color }}>
+                            {type.type.name}
+                        </p>
+                    )
+                })}
+
+
+            </div>
+            <div className={styles.infoWEIGHT_container}>
+                <div className={styles.infoWEIGHT}>
+                    <p><span> <GiUnbalanced /></span> {props.weight}</p>
+                    <p>Peso</p>
                 </div>
-                <div className={styles.infoTYPE_container}>
-                    {props.types.map(type => {
-                        return(
-                            <p className={styles.infoTYPE} style={{"background": color}}>{type.type.name}</p>
-                        )
-                    })}
-                </div>
-                <div className={styles.infoWEIGHT_container}>
-                    <div className={styles.infoWEIGHT}>
-                        <p><span> <GiUnbalanced/></span> {props.weight}</p>
-                        <p>Peso</p>
-                    </div>
-                    <div className={styles.infoWEIGHT}>
-                        <p><span> <BsRulers/></span> {props.height}</p>
-                        <p>Altura</p>
-                    </div>
-                </div>
-                {/* <h1>base_stat - {props.stats[0].base_stat}</h1> */}
-                {/* <h1>stat - {props.stats[0].stat.name}</h1> */}
-                <div className={styles.imgContainer}>
-                    <Image
-                        layout="fill"
-                        src={imgUrl}
-                    />
-                </div>
-                <div className={styles.btn_container}>
-                    <button>
-                        Veja mais
-                    </button>
+                <div className={styles.infoWEIGHT}>
+                    <p><span> <BsRulers /></span> {props.height}</p>
+                    <p>Altura</p>
                 </div>
             </div>
-        </>
+            {/* <h1>base_stat - {props.stats[0].base_stat}</h1> */}
+            {/* <h1>stat - {props.stats[0].stat.name}</h1> */}
+            <div className={styles.imgContainer}>
+                <Image
+                    priority
+                    layout="fill"
+                    src={imgUrl}
+                />
+            </div>
+            <div className={styles.btn_container}>
+                <button>
+                    Veja mais
+                </button>
+            </div>
+        </div>
     )
 }
 

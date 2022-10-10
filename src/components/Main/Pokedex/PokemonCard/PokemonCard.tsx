@@ -21,9 +21,22 @@ function PokemonCard(props: PokemonCardProps) {
 
     const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${props.id}.png`;
 
-    const [{ color }] = pokemonTypes.filter(
-        (type) => props.pokemon.types[0].type.name.indexOf(type.name) !== -1
-    )
+    // const [{ color }] = pokemonTypes.filter(
+    //     (type) => props.pokemon.types[0].type.name.indexOf(type.name) !== -1
+    // )
+    const typesP = [...pokemonTypes]
+
+    function colorType(name: string) {
+
+        var currentColor = typesP.map(t => {
+            if (t.name == name) {
+                var theColor = t.color
+                return theColor
+            }
+        })
+        return `${currentColor}`
+    }
+
     // const handleClick = async () => {
     //     const requestPokemon = await fetchPokemon(props.pokemon.name);
     //     props.setPokemonData(requestPokemon.data);
@@ -45,12 +58,11 @@ function PokemonCard(props: PokemonCardProps) {
             <div className={styles.infoTYPE_container}>
 
                 {props.pokemon.types.map((type) => {
-
                     return (
                         <p
                             key={type.type.name}
                             className={styles.infoTYPE}
-                            style={{ "background": color }}>
+                            style={{ "background": `${colorType(type.type.name).replaceAll(',', '')}` }}>
                             {type.type.name}
                         </p>
                     )

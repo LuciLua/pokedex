@@ -65,4 +65,4 @@ npm run start
 
 **So far, this is the preview, but you can check it out at [this updated link](https://pokedex-of-luci.vercel.app/)**
 
-<img src="print.png"/>
+<img src="preview.png"/>

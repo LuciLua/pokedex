@@ -5,7 +5,9 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <span>LuciLua@2022</span>
+        <div className={styles.socialMediaContainer}>
         <SocialMedia />
+        </div>
       </div>
     </footer>
 

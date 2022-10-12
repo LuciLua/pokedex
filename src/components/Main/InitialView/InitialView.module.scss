@@ -198,7 +198,7 @@
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1200px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -272,3 +272,19 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .container{
+    .about{
+      .content{
+        .name{
+          font-size: 3rem;
+        }
+        .description{
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+

@@ -28,3 +28,12 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .container{
+    .content{
+      padding: 0;
+    }
+  }
+
+}

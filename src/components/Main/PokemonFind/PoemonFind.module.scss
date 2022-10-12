@@ -57,26 +57,7 @@
       width: calc(100% - 40px);
 
       bottom: 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.463);
+      border-top: 1px solid var(--gray-25transparent);
     }
-  }
-}
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
-}
-
-@keyframes swell {
-  0%,
-  100% {
-    transform: translate3d(0, -25px, 0);
-  }
-  50% {
-    transform: translate3d(0, 5px, 0);
   }
 }

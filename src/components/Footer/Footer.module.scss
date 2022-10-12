@@ -1,5 +1,6 @@
 .footer {
   background-color: var(--secondary-color);
+
   .content {
     position: relative;
 
@@ -13,13 +14,32 @@
 
     margin: auto;
     bottom: 0;
+    padding: 15px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.463);
+    border-top: 1px solid var(--gray-25transparent);
 
     max-width: var(--max-width);
 
+    .socialMediaContainer{
+      margin-left: auto;
+    }
+
     span {
       margin: 10px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    .content {
+      position: relative;
+      height: fit-content;
+      flex-wrap: wrap;
+      .socialMediaContainer{
+        margin-left: 0;
+        margin-right: auto;
+      }
     }
   }
 }

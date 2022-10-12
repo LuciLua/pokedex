@@ -16,9 +16,20 @@
   .logo {
     margin-left: 20px;
     display: flex;
-    & > img {
+
+    &>img {
       position: relative;
       max-width: 150px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    .logo {
+      &>img{
+        max-width: 100px;
+      }
     }
   }
 }

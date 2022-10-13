@@ -5,4 +5,5 @@ export type Pokemon = {
     weight: number;
     height: number;
     stats?: [{ base_stat: number; stat: { name: string } }];
+    abilities: [{ability: {name: string}}]
   };

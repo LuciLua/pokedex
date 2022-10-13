@@ -4,6 +4,7 @@ import { BsRulers } from "react-icons/bs";
 import styles from "./PokemonCard.module.scss"
 import { pokemonTypes } from "../../../../pokemonTypes";
 import { Pokemon } from "../../../../types/Pokemon";
+import { fetchPokemon } from "../../../../api/fetchPokemon";
 
 type PokemonCardProps = {
     id: number;
@@ -13,8 +14,8 @@ type PokemonCardProps = {
     height: number;
     stats?: [{ base_stat: number; stat: { name: string } }];
     pokemon: Pokemon;
-    // setModal: (value: boolean) => void;
-    // setPokemonData: (data: Pokemon) => void;
+    setModal: (value: boolean) => void;
+    setPokemonData: (data: Pokemon) => void;
 };
 
 function PokemonCard(props: PokemonCardProps) {
@@ -27,7 +28,6 @@ function PokemonCard(props: PokemonCardProps) {
     const typesP = [...pokemonTypes]
 
     function colorType(name: string) {
-
         var currentColor = typesP.map(t => {
             if (t.name == name) {
                 var theColor = t.color
@@ -37,11 +37,13 @@ function PokemonCard(props: PokemonCardProps) {
         return `${currentColor}`
     }
 
-    // const handleClick = async () => {
-    //     const requestPokemon = await fetchPokemon(props.pokemon.name);
-    //     props.setPokemonData(requestPokemon.data);
-    //     // props.setModal(true);
-    // };
+    const handleClick = async () => {
+
+        const requestPokemon = await fetchPokemon(props.pokemon.name);
+        props.setPokemonData(requestPokemon.data);
+
+        props.setModal(true);
+    };
 
     // const formatPokemonId = (id: number) => {
     //     if (id < 10) return `#00${id}`;
@@ -80,8 +82,6 @@ function PokemonCard(props: PokemonCardProps) {
                     <p>Altura</p>
                 </div>
             </div>
-            {/* <h1>base_stat - {props.stats[0].base_stat}</h1> */}
-            {/* <h1>stat - {props.stats[0].stat.name}</h1> */}
             <div className={styles.imgContainer}>
                 <Image
                     priority
@@ -90,7 +90,7 @@ function PokemonCard(props: PokemonCardProps) {
                 />
             </div>
             <div className={styles.btn_container}>
-                <button>
+                <button onClick={handleClick}>
                     Veja mais
                 </button>
             </div>

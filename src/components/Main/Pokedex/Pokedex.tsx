@@ -4,6 +4,8 @@ import styles from "./Pokedex.module.scss"
 
 type PokedexProps = {
     pokemonList: Pokemon[];
+    setModal: (value: boolean) => void;
+    setPokemonData: (data: Pokemon) => void;
 };
 
 function Pokedex(props: PokedexProps) {
@@ -24,8 +26,8 @@ function Pokedex(props: PokedexProps) {
                                     height={pokemon.height}
                                     weight={pokemon.weight}
                                     stats={[{ base_stat: pokemon.stats[0].base_stat, stat: { name: pokemon.stats[0].stat.name } }]}
-                                // setModal={props.setModal}
-                                // setPokemonData={props.setPokemonData}
+                                    setModal={props.setModal}
+                                    setPokemonData={props.setPokemonData}
                                 />
                             )
                         })

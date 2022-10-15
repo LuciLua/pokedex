@@ -85,16 +85,16 @@
           padding: 15px;
           // background-color: rgba(255, 0, 0, 0.034);
 
-          
+
           .btnLeft {
             color: #fff;
             border: none;
             background-color: transparent;
-            
+
             margin-right: auto;
             cursor: pointer;
           }
-          
+
           .btnRight {
             color: #fff;
             border: none;
@@ -213,6 +213,28 @@
           z-index: 10;
 
           border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 900px) {
+  .container {
+    height: fit-content;
+
+    .content {
+      height: 250px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        .byText,
+        .byType {
+          max-width: 100%;
+          width: 100%;
         }
       }
     }

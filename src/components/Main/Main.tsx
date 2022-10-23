@@ -12,16 +12,6 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
             <InitialView mainPokemon={mainPokemon} />
             <PokemonFind>
                 {pokemonTypes.map(({ name }) => (
-                    // <PokemonType
-                    //     key={name}
-                    //     type={name}
-                    //     tabIndex={true}
-                    //     handleClick={() => {console.log('teste')}}
-                    // />
-                    // <div style={{margin: '0 10px'}} key={name}>
-                        // {name}
-                    // </div>
-
                     name
                 ))}
             </PokemonFind>

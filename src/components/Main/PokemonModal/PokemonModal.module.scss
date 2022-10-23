@@ -17,18 +17,77 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        // flex-direction: column;
+        flex-wrap: wrap;
 
         color: #fff;
 
         width: 100%;
         max-width: 700px;
-        height: 500px;
+        min-height: 500px;
+
         background-color: var(--secondary-color-75transparency);
         box-shadow: 0 0 12px var(--secondary-color-hover-black);
         border-radius: 24px;
 
+        padding: 20px;
+
         position: relative;
+
+        li {
+
+            width: 100%;
+            height: 40px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 5px;
+
+            list-style: none;
+            position: relative;
+
+            .txtStat{
+
+                width: 200px;
+                position: relative;
+
+                &>span:nth-child(1){
+                    margin-right: 20px;
+                }
+                &>span:nth-child(2){
+                    position: absolute;
+                    margin-right: 20px;
+                    right: 0;
+                    font-weight: 800;
+                }
+            }
+
+            .statBarContainer {
+                margin-top: 5px;
+
+                width: 100%;
+                height: 10px;
+
+                background-color: rgba(33, 33, 33, 0.441);
+
+                border-radius: 10px;
+
+                position: relative;
+                overflow: hidden;
+
+                .statBar {
+                    height: 100%;
+
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border-radius: 10px;
+                    background: linear-gradient(rgb(81, 171, 255), rgb(0, 157, 255));
+                }
+            }
+        }
 
         .name {
             font-size: 3rem;
@@ -67,6 +126,14 @@
             &:hover {
                 background-color: var(--primary-color-light);
             }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        .modal {
+            width: 90vw;
         }
     }
 }

@@ -33,6 +33,7 @@ function Pokedex(props: PokedexProps) {
                         })
                     }
                 </div>
+                <button className={styles.loadMore}>Carregar mais</button>
             </div>
         </div>
     )

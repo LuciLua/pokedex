@@ -20,11 +20,33 @@
   max-width: var(--max-width);
   padding: 20px;
 
+  display: flex;
+  flex-direction: column;
+
     .cards {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+    }
+    button.loadMore{
+      background-color: var(--primary-color);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      max-width: 250px;
+
+      margin: auto;
+      &:hover{
+        background: var(--primary-color-vivid);
+      }
     }
   }
 }

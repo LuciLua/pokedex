@@ -117,7 +117,7 @@
     bottom: 0;
 
     button {
-      background-color: rgb(21, 71, 255);
+      background-color: var(--three-color);
       color: #fff;
       font-weight: 800;
 
@@ -129,7 +129,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(20, 60, 205);
+        background-color: var(--three-color-hover);
       }
     }
   }

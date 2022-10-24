@@ -12,9 +12,11 @@ body {
   &::-webkit-scrollbar {
     width: 0.9rem;
   }
+
   &::-webkit-scrollbar-track {
     background-color: var(--secondary-color);
   }
+
   &::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 0.5rem;
@@ -27,10 +29,7 @@ body {
   --footer-height: 80px;
   --header-height: 120px;
   --selector-height: 30px;
-  --main-height: calc(
-    100vh -
-      calc(var(--footer-height) + var(--header-height) + var(--selector-height))
-  );
+  --main-height: calc(100vh - calc(var(--footer-height) + var(--header-height) + var(--selector-height)));
 
   --primary-color: rgb(233, 101, 8);
   --primary-color-light: rgb(229, 128, 99);
@@ -41,6 +40,9 @@ body {
   --secondary-color-hover-dark: rgb(59, 30, 122);
   --secondary-color-hover-black: rgb(32, 18, 61);
   --secondary-color-75transparency: rgba(54, 15, 138, 0.883);
+
+  --three-color: rgb(21, 71, 255);
+  --three-color-hover: rgb(20, 60, 205);
 
   --gray-25transparent: #ffffff3f;
 }

@@ -4,6 +4,7 @@ import InitialView from "./InitialView/InitialView"
 import PokemonModal from "./PokemonModal/PokemonModal"
 import { PokemonType } from "./PokemonType/PokemonType"
 import { pokemonTypes } from "../../pokemonTypes"
+import MorePages from "./MorePages/MorePages"
 
 function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokemonData }) {
 
@@ -29,6 +30,7 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
                 />
             ) : null
             }
+            <MorePages/>
         </>
     )
 }

@@ -44,7 +44,7 @@ function InitialView({ mainPokemon }) {
                         </div>
                         <div className={styles.description}>
                             <p>
-                                {mainPokemon.name} é um pokemon cujas habilidades são Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, tempore? Unde mollitia saepe nostrum aut praesentium eos? Non architecto facilis beatae aliquam quibusdam sit eos, unde ducimus, consectetur ipsa qui!
+                                Pikachu (ピカチュウ Pikachū?) é uma espécie fictícia pertencente à franquia de mídia Pokémon da Nintendo. Ele apareceu pela primeira vez no Japão em 1996, nos jogos eletrônicos Pokémon Red and Blue, e foi criado por Satoshi Tajiri. Originalmente criado como um personagem secundário, Pikachu tornou-se o mascote do universo Pokémon depois de ter sido escolhido como um dos personagens principais na adaptação televisiva do jogo, ao lado de seu treinador Ash Ketchum. Ele também é considerado o Pokémon mais popular da franquia.
                             </p>
                         </div>
                         <div className={styles.more}>

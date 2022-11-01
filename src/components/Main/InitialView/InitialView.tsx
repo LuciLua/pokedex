@@ -3,7 +3,7 @@ import { AiFillFire, AiOutlineAlert } from "react-icons/ai"
 import { useEffect, useState } from "react"
 import styles from "./InitialView.module.scss"
 
-function InitialView({ mainPokemon }) {
+function InitialView({ mainPokemon, setModal, setPokemonData }) {
 
     // var urlSkin =  mainPokemon.sprites.other.home.front_shiny
     const [urlSkinPath, setUrlSkinPath] = useState('/')
@@ -12,6 +12,11 @@ function InitialView({ mainPokemon }) {
         setUrlSkinPath('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/25.png')
     }, [])
 
+
+    function pikachuAbout() {
+        setModal(true)
+        setPokemonData(mainPokemon)
+    }
 
     return (
         <>
@@ -47,7 +52,7 @@ function InitialView({ mainPokemon }) {
                                 Pikachu (ピカチュウ Pikachū?) é uma espécie fictícia pertencente à franquia de mídia Pokémon da Nintendo. Ele apareceu pela primeira vez no Japão em 1996, nos jogos eletrônicos Pokémon Red and Blue, e foi criado por Satoshi Tajiri. Originalmente criado como um personagem secundário, Pikachu tornou-se o mascote do universo Pokémon depois de ter sido escolhido como um dos personagens principais na adaptação televisiva do jogo, ao lado de seu treinador Ash Ketchum. Ele também é considerado o Pokémon mais popular da franquia.
                             </p>
                         </div>
-                        <div className={styles.more}>
+                        <div className={styles.more} onClick={() => pikachuAbout()}>
                             <button><span><AiOutlineAlert /></span><span>More</span></button>
                         </div>
                     </div>

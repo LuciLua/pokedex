@@ -2,7 +2,6 @@ import PokemonFind from "./PokemonFind/PokemonFind"
 import Pokedex from "./Pokedex/Pokedex"
 import InitialView from "./InitialView/InitialView"
 import PokemonModal from "./PokemonModal/PokemonModal"
-import { PokemonType } from "./PokemonType/PokemonType"
 import { pokemonTypes } from "../../pokemonTypes"
 import MorePages from "./MorePages/MorePages"
 
@@ -10,7 +9,11 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
 
     return (
         <>
-            <InitialView mainPokemon={mainPokemon} />
+            <InitialView
+                setPokemonData={setPokemonData}
+                mainPokemon={mainPokemon}
+                setModal={setModal}
+            />
             <PokemonFind>
                 {pokemonTypes.map(({ name }) => (
                     name
@@ -30,7 +33,7 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
                 />
             ) : null
             }
-            <MorePages/>
+            <MorePages />
         </>
     )
 }

@@ -5,12 +5,14 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
 
     top: 0;
 
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.468);
+
+    animation: fade 0.2s linear;
 
     .modal {
 
@@ -48,15 +50,16 @@
             list-style: none;
             position: relative;
 
-            .txtStat{
+            .txtStat {
 
                 width: 200px;
                 position: relative;
 
-                &>span:nth-child(1){
+                &>span:nth-child(1) {
                     margin-right: 20px;
                 }
-                &>span:nth-child(2){
+
+                &>span:nth-child(2) {
                     position: absolute;
                     margin-right: 20px;
                     right: 0;
@@ -77,6 +80,7 @@
                 position: relative;
                 overflow: hidden;
 
+
                 .statBar {
                     height: 100%;
 
@@ -85,6 +89,8 @@
                     top: 0;
                     border-radius: 10px;
                     background: linear-gradient(rgb(81, 171, 255), rgb(0, 157, 255));
+
+                    animation: slide 0.5s linear;
                 }
             }
         }
@@ -106,6 +112,8 @@
 
             min-height: 200px;
             min-width: 100%;
+
+            user-select: none;
         }
 
         button {
@@ -135,5 +143,25 @@
         .modal {
             width: 90vw;
         }
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: none;
     }
 }

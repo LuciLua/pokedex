@@ -6,22 +6,20 @@ export default class MyDocumnent extends Document {
     return (
       <Html>
         <Head>
-          <head>
-            <title>Pokedéx</title>
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link
-              href={googleFonts}
-              rel="stylesheet"
-            />
-                <link rel="icon" href="/pokebola.png" />
-              </head>
-            </Head>
-            <body>
-              <Main />
-              <NextScript />
-            </body>
-          </Html>
-          );
+          <title>Pokedéx</title>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            href={googleFonts}
+            rel="stylesheet"
+          />
+          <link rel="icon" href="/pokebola.png" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

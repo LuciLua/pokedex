@@ -5,7 +5,7 @@ import PokemonModal from "./PokemonModal/PokemonModal"
 import { pokemonTypes } from "../../pokemonTypes"
 import MorePages from "./MorePages/MorePages"
 
-function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokemonData }) {
+function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokemonData,setPage, page }) {
 
     return (
         <>
@@ -33,7 +33,7 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
                 />
             ) : null
             }
-            <MorePages />
+            <MorePages setPage={setPage} page={page} />
         </>
     )
 }

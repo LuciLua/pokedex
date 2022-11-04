@@ -11,6 +11,7 @@ function Home() {
   const [pokemonList, setPokemonList] = useState<any>([]);
   const [modal, setModal] = useState(false);
   const [pokemonData, setPokemonData] = useState<Pokemon>();
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     // pikachu
@@ -22,9 +23,9 @@ function Home() {
   
   useEffect(() => {
     (async () => {
-      setPokemonList(await fetchPokemonList(1));
+      setPokemonList(await fetchPokemonList(page));
     })();
-  }, []);
+  }, [page]);
 
   return (
     <div className={styles.container}>
@@ -37,6 +38,9 @@ function Home() {
         
         mainPokemon={mainPokemon}
         pokemonList={pokemonList}
+
+        setPage={setPage}
+        page={page}
       />
     </div>
   );

@@ -3,17 +3,22 @@ import { ReactNode, SyntheticEvent, useState } from 'react'
 import { AiFillAlert, AiFillBook, AiFillInteraction } from 'react-icons/ai'
 import { BsArrowLeft, BsArrowRight, BsChatLeft, BsSearch, BsTextLeft } from 'react-icons/bs'
 import { IconBase } from 'react-icons/lib'
+import { fetchPokemon } from '../../../api/fetchPokemon'
 import { useMedia } from '../../../hooks/useMedia'
 import { pokemonTypes } from '../../../pokemonTypes'
 import styles from './PoemonFind.module.scss'
 
 type SlideProps = {
-    // children: ReactNode;
     children: any;
+    setFindPokemon: any;
+    findPokemon: string;
+    setPage: any;
+    page:  number;
 };
 
-function PokemonFind({ children }: SlideProps) {
+function PokemonFind({ children, setFindPokemon, findPokemon, setPage, page }: SlideProps) {
 
+    const [searchInput, setSearchInput] = useState('');
     const [slidePosition, setSlidePosition] = useState(0);
     const mobile = useMedia("(max-width: 31.25rem)");
 
@@ -36,6 +41,13 @@ function PokemonFind({ children }: SlideProps) {
         return `${currentColor}`
     }
 
+    const search = () => {
+        setFindPokemon(searchInput)
+        if(findPokemon == ''){
+            setPage(1)
+            console.log(page)
+        }
+    }
 
 
     const slideNavigation = (e) => {
@@ -106,10 +118,10 @@ function PokemonFind({ children }: SlideProps) {
                         </div>
                     </div>
                     <div className={styles.byText}>
-                        <span className={styles.icon}>
+                        <span className={styles.icon} onClick={() => search()}>
                             <BsSearch />
                         </span>
-                        <input type="text" placeholder="Busque seu pokemon" />
+                        <input onInput={(e: any) => setSearchInput(e.target.value)} type="text" placeholder="Busque seu pokemon" />
                     </div>
                 </form>
             </div >

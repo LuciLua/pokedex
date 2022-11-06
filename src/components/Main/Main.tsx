@@ -5,7 +5,18 @@ import PokemonModal from "./PokemonModal/PokemonModal"
 import { pokemonTypes } from "../../pokemonTypes"
 import MorePages from "./MorePages/MorePages"
 
-function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokemonData,setPage, page }) {
+function Main({
+    mainPokemon,
+    pokemonList,
+    setModal,
+    modal,
+    setPokemonData,
+    pokemonData,
+    setPage,
+    page,
+    setFindPokemon,
+    findPokemon
+}) {
 
     return (
         <>
@@ -14,12 +25,17 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
                 mainPokemon={mainPokemon}
                 setModal={setModal}
             />
-            <PokemonFind>
+            <PokemonFind
+                setPage={setPage}
+                setFindPokemon={setFindPokemon}
+                findPokemon={findPokemon}
+                page={page}>
                 {pokemonTypes.map(({ name }) => (
                     name
                 ))}
             </PokemonFind>
             <Pokedex
+                findPokemon={findPokemon}
                 pokemonList={pokemonList}
                 setModal={setModal}
                 setPokemonData={setPokemonData} />
@@ -33,7 +49,7 @@ function Main({ mainPokemon, pokemonList, setModal, modal, setPokemonData, pokem
                 />
             ) : null
             }
-            <MorePages setPage={setPage} page={page} />
+            <MorePages setPage={setPage} page={page} setFindPokemon={setFindPokemon} findPokemon={findPokemon} />
         </>
     )
 }

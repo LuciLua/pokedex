@@ -11,7 +11,8 @@ function Home() {
   const [pokemonList, setPokemonList] = useState<any>([]);
   const [modal, setModal] = useState(false);
   const [pokemonData, setPokemonData] = useState<Pokemon>();
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
+  const [findPokemon, setFindPokemon] = useState<string>('');
 
   useEffect(() => {
     // pikachu
@@ -23,9 +24,9 @@ function Home() {
   
   useEffect(() => {
     (async () => {
-      setPokemonList(await fetchPokemonList(page));
+      setPokemonList(await fetchPokemonList(page, findPokemon));
     })();
-  }, [page]);
+  }, [page, findPokemon]);
 
   return (
     <div className={styles.container}>
@@ -41,7 +42,10 @@ function Home() {
 
         setPage={setPage}
         page={page}
-      />
+
+        setFindPokemon={setFindPokemon}
+        findPokemon={findPokemon}
+        />
     </div>
   );
 }

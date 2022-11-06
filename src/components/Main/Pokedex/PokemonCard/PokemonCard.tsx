@@ -7,12 +7,6 @@ import { Pokemon } from "../../../../types/Pokemon";
 import { fetchPokemon } from "../../../../api/fetchPokemon";
 
 type PokemonCardProps = {
-    id: number;
-    name: string;
-    types: [{ type: { name: string } }];
-    weight: number;
-    height: number;
-    stats?: [{ base_stat: number; stat: { name: string } }];
     pokemon: Pokemon;
     setModal: (value: boolean) => void;
     setPokemonData: (data: Pokemon) => void;
@@ -20,11 +14,10 @@ type PokemonCardProps = {
 
 function PokemonCard(props: PokemonCardProps) {
 
-    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${props.id}.png`;
+    const { pokemon } = props
 
-    // const [{ color }] = pokemonTypes.filter(
-    //     (type) => props.pokemon.types[0].type.name.indexOf(type.name) !== -1
-    // )
+    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
+
     const typesP = [...pokemonTypes]
 
     function colorType(name: string) {
@@ -37,48 +30,48 @@ function PokemonCard(props: PokemonCardProps) {
         return `${currentColor}`
     }
 
-    const handleClick = async () => {
-
-        const requestPokemon = await fetchPokemon(props.pokemon.name);
+    const handleClickOpenModal = async () => {
+        const requestPokemon = await fetchPokemon(pokemon.name);
         props.setPokemonData(requestPokemon.data);
 
         props.setModal(true);
     };
 
-    // const formatPokemonId = (id: number) => {
-    //     if (id < 10) return `#00${id}`;
-    //     else if (id >= 10 && id < 99) return `#0${id}`;
-    //     else return `#${id}`;
-    // };
+    const formatPokemonId = (id: number) => {
+        if (id < 10) return `#00${id}`;
+        else if (id >= 10 && id < 99) return `#0${id}`;
+        else return `#${id}`;
+    };
 
     return (
         <div className={styles.card}>
             <div className={styles.infoTXT_container}>
-                <p>#{props.id}</p>
-                <h1>{props.name}</h1>
+                <p>{formatPokemonId(pokemon.id)}</p>
+                <h1>{pokemon.name}</h1>
             </div>
             <div className={styles.infoTYPE_container}>
 
-                {props.pokemon.types.map((type) => {
-                    return (
-                        <p
-                            key={type.type.name}
-                            className={styles.infoTYPE}
-                            style={{ "background": `${colorType(type.type.name).replaceAll(',', '')}` }}>
-                            {type.type.name}
-                        </p>
-                    )
-                })}
-
+                {
+                    pokemon.types ?
+                        pokemon.types.map(types => {
+                            return (<p
+                                key={types.type.name}
+                                className={styles.infoTYPE}
+                                style={{ "background": `${colorType(types.type.name).replaceAll(',', '')}` }}>
+                                {types.type.name}
+                            </p>)
+                        })
+                        : null
+                }
 
             </div>
             <div className={styles.infoWEIGHT_container}>
                 <div className={styles.infoWEIGHT}>
-                    <p><span> <GiUnbalanced /></span> {props.weight}</p>
+                    <p><span> <GiUnbalanced /></span> {pokemon.weight}</p>
                     <p>Peso</p>
                 </div>
                 <div className={styles.infoWEIGHT}>
-                    <p><span> <BsRulers /></span> {props.height}</p>
+                    <p><span> <BsRulers /></span> {pokemon.height}</p>
                     <p>Altura</p>
                 </div>
             </div>
@@ -90,11 +83,11 @@ function PokemonCard(props: PokemonCardProps) {
                 />
             </div>
             <div className={styles.btn_container}>
-                <button onClick={handleClick}>
+                <button onClick={handleClickOpenModal}>
                     Veja mais
                 </button>
             </div>
-        </div>
+        </div >
     )
 }
 

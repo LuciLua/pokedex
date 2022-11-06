@@ -168,6 +168,7 @@
           height: 100%;
           color: #fff;
 
+
           font-size: 19px;
           font-weight: 500;
 
@@ -191,15 +192,27 @@
         .icon {
           position: absolute;
           color: #fff;
-          right: 20px;
+          right: 0;
           z-index: 11;
           font-size: 20px;
+
+          width: 60px;
+          height: 100%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          cursor: pointer;
+
         }
 
         &::before {
           position: absolute;
           right: 0;
           content: '';
+
+          cursor: pointer;
 
           display: flex;
           justify-content: center;

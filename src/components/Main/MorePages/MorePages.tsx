@@ -1,20 +1,12 @@
-import usePokemon from '../../../hooks/usePokemon'
 import styles from './MorePages.module.scss'
 
-function MorePages({ setPage, page }) {
-    function choicePage(num) {
-
-        // const offset = 9 * (num - 1);
-        // const URL = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=9`;
-
-        // usePokemon(URL)
-
-        // console.log(URL)
-
-        setPage(num)
-        console.log(page)
+function MorePages({ setPage, page, setFindPokemon, findPokemon }) {
+    async function choicePage(num) {
+        await setPage(num)
+        await setFindPokemon('')
         
-
+        console.log(findPokemon)
+        console.log(page)
     }
 
     return (

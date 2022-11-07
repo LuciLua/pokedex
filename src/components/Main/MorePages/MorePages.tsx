@@ -80,8 +80,8 @@ function MorePages({ setPage, page, setFindPokemon, findPokemon }) {
     return (
         <div className={styles.containerMorePages}>
             <ul>
-                <li id='first' onClick={() => first()}>Primeira</li>
-                <li id='less' onClick={() => less()}>...</li>
+                <li style={{'display': 'none'}} id='first' onClick={() => first()}>Primeira</li>
+                <li style={{'display': 'none'}} id='less' onClick={() => less()}>...</li>
                 {numPages.map(np => {
                     return (
                         <li key={np} onClick={() => choicePage(np)}>{np}</li>

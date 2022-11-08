@@ -9,10 +9,10 @@ type PokedexProps = {
     findPokemon: any;
 };
 
-function Pokedex({ pokemonList: pokemon, setModal, setPokemonData, findPokemon }: PokedexProps) {
+function Pokedex({ pokemonList, setModal, setPokemonData, findPokemon }: PokedexProps) {
 
 
-    function pokemonCardRender(pokemon:Pokemon) {
+    function pokemonCardRender(pokemon: Pokemon) {
         return (
             <PokemonCard
                 pokemon={pokemon}
@@ -23,18 +23,29 @@ function Pokedex({ pokemonList: pokemon, setModal, setPokemonData, findPokemon }
         )
     }
 
+    function pokemonListing(pokemons:Pokemon[]) {
+        const listOfPokemons = pokemons.map(pokemon => {
+            return pokemonCardRender(pokemon)
+        })
+
+        return listOfPokemons
+    }
+
+    function verifyFindPokemonAndRenderCards(findPokemon) {
+        console.log(pokemonList)
+        if (findPokemon == '') {
+            // nao consegue voltar
+            return pokemonListing(pokemonList)
+        } else {
+            return pokemonCardRender(pokemonList)
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.cards}>
-                    {
-                        findPokemon == '' ?
-                            pokemon.map((pokemonOfList: Pokemon) => {
-                                return pokemonCardRender(pokemonOfList)
-                            })
-                            :                        
-                            pokemonCardRender(pokemon)
-                    }
+                    {verifyFindPokemonAndRenderCards(findPokemon)}
                 </div>
                 <button className={styles.loadMore}>Carregar mais</button>
             </div>

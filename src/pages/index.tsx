@@ -24,9 +24,17 @@ function Home() {
   
   useEffect(() => {
     (async () => {
-      setPokemonList(await fetchPokemonList(page, findPokemon));
-    })();
+
+      if(findPokemon == '' || findPokemon == undefined || findPokemon == null){
+        setPokemonList(await fetchPokemonList(page, '', true));
+      } else {
+        setPokemonList(await fetchPokemonList(page, findPokemon, false));
+      }
+    })()
+    
+    ;
   }, [page, findPokemon]);
+
 
   return (
     <div className={styles.container}>

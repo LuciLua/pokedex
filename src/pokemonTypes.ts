@@ -8,7 +8,7 @@ export const pokemonTypes = [
     { name: "fire", color: "#ff9900" },
     { name: "flying", color: "#89bdff" },
     { name: "ghost", color: "#4e6aff" },
-    { name: "grass", color: "#1cd80e" },
+    { name: "grass", color: "#4CC779" },
     { name: "ground", color: "#ff6b0d" },
     { name: "ice", color: "#2ee4c6" },
     { name: "normal", color: "#9fa39d" },

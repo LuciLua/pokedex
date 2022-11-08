@@ -50,7 +50,6 @@ function PokemonCard(props: PokemonCardProps) {
                 <h1>{pokemon.name}</h1>
             </div>
             <div className={styles.infoTYPE_container}>
-
                 {
                     pokemon.types ?
                         pokemon.types.map(types => {
@@ -83,7 +82,9 @@ function PokemonCard(props: PokemonCardProps) {
                 />
             </div>
             <div className={styles.btn_container}>
-                <button onClick={handleClickOpenModal}>
+                <button onClick={handleClickOpenModal} 
+                style={{ "background": `${pokemon.types ? colorType(pokemon.types[0].type.name).replaceAll(',', '') : null}`}}
+                >
                     Veja mais
                 </button>
             </div>

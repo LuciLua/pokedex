@@ -41,12 +41,18 @@ function PokemonFind({ children, setFindPokemon, findPokemon, setPage, page }: S
         return `${currentColor}`
     }
 
-    const search = () => {
+    const search = (e:Event) => {
+        e.preventDefault()
         setFindPokemon(searchInput)
-        if(findPokemon == ''){
-            setPage(1)
+        console.log(searchInput)
+        if(findPokemon === '' || findPokemon == null || findPokemon == undefined){
             console.log(page)
+            setFindPokemon('')
         }
+    }
+
+    function formatToLowCase(value: string){
+        return value.toLowerCase()
     }
 
 
@@ -118,10 +124,10 @@ function PokemonFind({ children, setFindPokemon, findPokemon, setPage, page }: S
                         </div>
                     </div>
                     <div className={styles.byText}>
-                        <span className={styles.icon} onClick={() => search()}>
+                        <input onChange={(e: any) => setSearchInput(formatToLowCase(e.target.value))} type="text" placeholder="Busque seu pokemon" />
+                        <button className={styles.icon} onClick={(e:any) => search(e)}>
                             <BsSearch />
-                        </span>
-                        <input onInput={(e: any) => setSearchInput(e.target.value)} type="text" placeholder="Busque seu pokemon" />
+                        </button>
                     </div>
                 </form>
             </div >

@@ -1,22 +1,22 @@
 import Image from "next/image";
 import React from "react";
+import { pokemonTypes } from "../../../pokemonTypes";
 import { Pokemon } from "../../../types/Pokemon";
 import styles from "./PokemonModal.module.scss"
 
 type PokedexProps = {
-    pokemonList: Pokemon[];
     pokemonData: Pokemon;
     setModal: (value: boolean) => void;
 };
 
 
-function PokemonModal(props: PokedexProps) {
+function PokemonModal({ setModal, pokemonData }: PokedexProps) {
 
     function closeModal() {
-        props.setModal(false);
+        setModal(false);
     }
 
-    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${props.pokemonData.id}.png`;
+    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemonData.id}.png`;
 
 
     const formatStatName = (statName: string) => {
@@ -36,11 +36,23 @@ function PokemonModal(props: PokedexProps) {
         }
     };
 
+    const typesP = [...pokemonTypes]
+
+    function colorType(name: string) {
+        var currentColor = typesP.map(t => {
+            if (t.name == name) {
+                var theColor = t.color
+                return theColor
+            }
+        })
+        return `${currentColor}`
+    }
+
     return (
         <div className={styles.container} >
             <div className={styles.modal}>
                 <h1 className={styles.name}>
-                    {props.pokemonData.name}
+                    {pokemonData.name}
                 </h1>
                 <div className={styles.imgContainer}>
                     <Image
@@ -51,7 +63,7 @@ function PokemonModal(props: PokedexProps) {
                     />
                 </div>
 
-                {props.pokemonData.stats.map(({ stat, base_stat }) =>
+                {pokemonData.stats.map(({ stat, base_stat }) =>
                     React.Children.toArray(
                         <li>
                             <div className={styles.txtStat}>
@@ -59,7 +71,7 @@ function PokemonModal(props: PokedexProps) {
                                 <span>{base_stat}</span>
                             </div>
                             <div className={styles.statBarContainer}>
-                                <div className={styles.statBar} style={{ width: `${base_stat}%` }}></div>
+                                <div className={styles.statBar} style={{ width: `${base_stat}%`, background: `${colorType(pokemonData.types[0].type.name).replaceAll(',', '')}` }}></div>
                             </div>
                         </li>
                     ))}

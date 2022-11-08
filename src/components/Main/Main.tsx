@@ -42,14 +42,17 @@ function Main({
 
             {modal == true ? (
                 <PokemonModal
-                    pokemonList={pokemonList}
                     pokemonData={pokemonData}
                     setModal={setModal}
                     key={pokemonData.name}
                 />
             ) : null
             }
-            <MorePages setPage={setPage} page={page} setFindPokemon={setFindPokemon} findPokemon={findPokemon} />
+            <MorePages 
+            setPage={setPage} 
+            page={page} 
+            setFindPokemon={setFindPokemon} 
+            findPokemon={findPokemon} />
         </>
     )
 }

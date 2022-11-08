@@ -21,18 +21,18 @@ function Home() {
       .then(json => setMainPokemon(json))
       .catch(err => console.log(err))
   }, [])
-  
+
   useEffect(() => {
     (async () => {
 
-      if(findPokemon == '' || findPokemon == undefined || findPokemon == null){
-        setPokemonList(await fetchPokemonList(page, '', true));
+      if (findPokemon == '' || findPokemon == undefined || findPokemon == null) {
+        setPokemonList(await fetchPokemonList(page, findPokemon, true));
       } else {
         setPokemonList(await fetchPokemonList(page, findPokemon, false));
       }
     })()
-    
-    ;
+
+      ;
   }, [page, findPokemon]);
 
 
@@ -43,8 +43,8 @@ function Home() {
         modal={modal}
 
         setPokemonData={setPokemonData}
-        pokemonData = {pokemonData}
-        
+        pokemonData={pokemonData}
+
         mainPokemon={mainPokemon}
         pokemonList={pokemonList}
 
@@ -53,7 +53,7 @@ function Home() {
 
         setFindPokemon={setFindPokemon}
         findPokemon={findPokemon}
-        />
+      />
     </div>
   );
 }

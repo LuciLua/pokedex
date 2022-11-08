@@ -4,6 +4,7 @@ import { AiFillAlert, AiFillBook, AiFillInteraction } from 'react-icons/ai'
 import { BsArrowLeft, BsArrowRight, BsChatLeft, BsSearch, BsTextLeft } from 'react-icons/bs'
 import { IconBase } from 'react-icons/lib'
 import { fetchPokemon } from '../../../api/fetchPokemon'
+import { fetchPokemonList } from '../../../api/fetchPokemonList'
 import { useMedia } from '../../../hooks/useMedia'
 import { pokemonTypes } from '../../../pokemonTypes'
 import styles from './PoemonFind.module.scss'
@@ -44,11 +45,6 @@ function PokemonFind({ children, setFindPokemon, findPokemon, setPage, page }: S
     const search = (e:Event) => {
         e.preventDefault()
         setFindPokemon(searchInput)
-        console.log(searchInput)
-        if(findPokemon === '' || findPokemon == null || findPokemon == undefined){
-            console.log(page)
-            setFindPokemon('')
-        }
     }
 
     function formatToLowCase(value: string){

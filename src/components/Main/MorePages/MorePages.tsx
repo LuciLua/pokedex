@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import styles from './MorePages.module.scss'
 
-function MorePages({ setPage, page, setFindPokemon, findPokemon }) {
+function MorePages({ setPage, setFindPokemon }) {
 
     const [numPages, setNumPages] = useState([1, 2, 3, 4, 5])
 
-    async function choicePage(num:number) {
-        await setFindPokemon('')
+    async function choicePage(num: number) {
+        await setFindPokemon(null)
         await setPage(num)
-        console.log(findPokemon)
     }
 
     function more() {
@@ -80,8 +79,8 @@ function MorePages({ setPage, page, setFindPokemon, findPokemon }) {
     return (
         <div className={styles.containerMorePages}>
             <ul>
-                <li style={{'display': 'none'}} id='first' onClick={() => first()}>Primeira</li>
-                <li style={{'display': 'none'}} id='less' onClick={() => less()}>...</li>
+                <li style={{ 'display': 'none' }} id='first' onClick={() => first()}>Primeira</li>
+                <li style={{ 'display': 'none' }} id='less' onClick={() => less()}>...</li>
                 {numPages.map(np => {
                     return (
                         <li key={np} onClick={() => choicePage(np)}>{np}</li>

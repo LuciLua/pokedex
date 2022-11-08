@@ -31,9 +31,9 @@ function Pokedex({ pokemonList, setModal, setPokemonData, findPokemon }: Pokedex
         return listOfPokemons
     }
 
-    function verifyFindPokemonAndRenderCards(findPokemon) {
+    function verifyFindPokemonAndRenderCards(findPokemon: string) {
         console.log(pokemonList)
-        if (findPokemon == '') {
+        if (!findPokemon) {
             // nao consegue voltar
             return pokemonListing(pokemonList)
         } else {

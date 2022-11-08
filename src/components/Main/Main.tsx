@@ -48,11 +48,9 @@ function Main({
                 />
             ) : null
             }
-            <MorePages 
-            setPage={setPage} 
-            page={page} 
-            setFindPokemon={setFindPokemon} 
-            findPokemon={findPokemon} />
+            <MorePages
+                setPage={setPage}
+                setFindPokemon={setFindPokemon} />
         </>
     )
 }

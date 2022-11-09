@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { BsRulers } from "react-icons/bs";
+import { GiUnbalanced } from "react-icons/gi";
 import { pokemonTypes } from "../../../pokemonTypes";
 import { Pokemon } from "../../../types/Pokemon";
 import styles from "./PokemonModal.module.scss"
@@ -48,37 +50,59 @@ function PokemonModal({ setModal, pokemonData }: PokedexProps) {
         return `${currentColor}`
     }
 
+    const formatPokemonId = (id: number) => {
+        if (id < 10) return `#00${id}`;
+        else if (id >= 10 && id < 99) return `#0${id}`;
+        else return `#${id}`;
+    };
+
     return (
         <div className={styles.container} >
             <div className={styles.modal}>
-                <h1 className={styles.name}>
-                    {pokemonData.name}
-                </h1>
-                <div className={styles.imgContainer}>
-                    <Image
-                        priority
-                        objectFit="contain"
-                        layout="fill"
-                        src={imgUrl}
-                    />
+                <div className={styles.basicInfoContainer}>
+                    <div className={styles.imgContainer}>
+                        <Image
+                            priority
+                            objectFit="contain"
+                            layout="fill"
+                            src={imgUrl}
+                        />
+                    </div>
+                    <h1 className={styles.id}>
+                        {formatPokemonId(pokemonData.id)}
+                    </h1>
+                    <h1 className={styles.name}>
+                        {pokemonData.name}
+                    </h1>
+                    <div className={styles.infoWEIGHT_container}>
+                        <div className={styles.infoWEIGHT}>
+                            <p><span> <GiUnbalanced /></span> {pokemonData.weight}</p>
+                            <p>Peso</p>
+                        </div>
+                        <div className={styles.infoWEIGHT}>
+                            <p><span> <BsRulers /></span> {pokemonData.height}</p>
+                            <p>Altura</p>
+                        </div>
+                    </div>
                 </div>
-
-                {pokemonData.stats.map(({ stat, base_stat }) =>
-                    React.Children.toArray(
-                        <li>
-                            <div className={styles.txtStat}>
-                                <span>{formatStatName(stat.name)}</span>
-                                <span>{base_stat}</span>
-                            </div>
-                            <div className={styles.statBarContainer}>
-                                <div className={styles.statBar} style={{ width: `${base_stat}%`, background: `${colorType(pokemonData.types[0].type.name).replaceAll(',', '')}` }}></div>
-                            </div>
-                        </li>
-                    ))}
-
-                <button onClick={closeModal}>
-                    X
-                </button>
+                <div className={styles.statsInfoContainer}>
+                    <h1 className={styles.stats}>Stats</h1>
+                    {pokemonData.stats.map(({ stat, base_stat }) =>
+                        React.Children.toArray(
+                            <li>
+                                <div className={styles.txtStat}>
+                                    <span>{formatStatName(stat.name)}</span>
+                                    <span>{base_stat}</span>
+                                </div>
+                                <div className={styles.statBarContainer}>
+                                    <div className={styles.statBar} style={{ width: `${base_stat}%`, background: `${colorType(pokemonData.types[0].type.name).replaceAll(',', '')}` }}></div>
+                                </div>
+                            </li>
+                        ))}
+                </div>
+            <button onClick={closeModal}>
+                X
+            </button>
             </div>
         </div>
     )

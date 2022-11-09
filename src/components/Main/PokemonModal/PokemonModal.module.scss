@@ -9,8 +9,10 @@
 
     top: 0;
 
+    padding: 10px;
+
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.468);
+    background-color: rgba(0, 0, 0, 0.668);
 
     animation: fade 0.2s linear;
 
@@ -25,84 +27,153 @@
         color: #fff;
 
         width: 100%;
-        max-width: 700px;
-        min-height: 500px;
+        max-width: 950px;
+        min-height: 400px;
 
         background-color: var(--secondary-color-75transparency);
+        background-color: rgba(45, 59, 156, 0.37);
         box-shadow: 0 0 12px var(--secondary-color-hover-black);
         border-radius: 24px;
 
-        padding: 20px;
+        padding: 60px;
+        gap: 40px;
 
         position: relative;
 
-        li {
+        width: 100%;
 
-            width: 100%;
-            height: 40px;
-
+        .basicInfoContainer {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            margin: 5px;
+            width: 45%;
 
-            list-style: none;
             position: relative;
 
-            .txtStat {
+            gap: 10px;
 
-                width: 200px;
-                position: relative;
-
-                &>span:nth-child(1) {
-                    margin-right: 20px;
-                }
-
-                &>span:nth-child(2) {
-                    position: absolute;
-                    margin-right: 20px;
-                    right: 0;
-                    font-weight: 800;
-                }
+            .id {
+                font-size: 18px;
             }
 
-            .statBarContainer {
-                margin-top: 5px;
+            .name {
+                font-size: 25px;
+            }
 
-                width: 100%;
-                height: 10px;
 
-                background-color: rgba(33, 33, 33, 0.441);
+            .infoWEIGHT_container {
+                display: flex;
+                padding: 5px 10px;
 
-                border-radius: 10px;
+                margin: 20px 0;
 
+                .infoWEIGHT {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    gap: 5px;
+
+                    margin: 0 5px;
+                    color: #fff;
+
+                    p {
+                        &:nth-child(1) {
+                            font-weight: 800;
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .statsInfoContainer {
+            width: 50%;
+            padding: 0 0 0 30px;
+
+            // .stats{
                 position: relative;
-                overflow: hidden;
-
-
-                .statBar {
-                    height: 100%;
-
+                &::before{
+                    content: '';
                     position: absolute;
                     left: 0;
-                    top: 0;
-                    border-radius: 10px;
-                    background: linear-gradient(rgb(81, 171, 255), rgb(0, 157, 255));
+                    background-color: rgba(255, 255, 255, 0.326);
+                    height: 100%;
+                    width: 1px;
+                }
 
-                    animation: slide 0.5s linear;
+            li {
+
+                width: 100%;
+                height: 40px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin: 5px;
+
+                list-style: none;
+                position: relative;
+
+                .txtStat {
+
+                    width: 200px;
+                    position: relative;
+
+                    &>span:nth-child(1) {
+                        margin-right: 20px;
+                    }
+
+                    &>span:nth-child(2) {
+                        position: absolute;
+                        margin-right: 20px;
+                        right: 0;
+                        font-weight: 800;
+                    }
+                }
+
+                .statBarContainer {
+                    margin-top: 5px;
+
+                    width: 100%;
+                    height: 10px;
+
+                    background-color: rgba(33, 33, 33, 0.441);
+
+                    border-radius: 10px;
+
+                    position: relative;
+                    overflow: hidden;
+
+
+                    .statBar {
+                        height: 100%;
+
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-radius: 10px;
+                        background: linear-gradient(rgb(81, 171, 255), rgb(0, 157, 255));
+
+                        animation: slide 0.5s linear;
+                    }
                 }
             }
+
         }
 
-        .name {
-            font-size: 3rem;
-        }
+        // .name {
+        //     font-size: 3rem;
+        // }
 
-        .ability {
-            margin: 5px;
-            font-size: 1rem;
-        }
+        // .ability {
+        //     margin: 5px;
+        //     font-size: 1rem;
+        // }
 
 
         .imgContainer {
@@ -138,10 +209,35 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     .container {
         .modal {
-            width: 90vw;
+            min-width: 80vw;
+            width: fit-content;
+            padding: 10px;
+            gap: 10px;
+
+            .statsInfoContainer {
+                width: 100%;
+                padding: 20px;
+
+                &::before{
+                    display: none;
+                }
+
+                .stats {
+                    position: relative;
+                    padding: 10px 0;
+                    &::before {
+                        content: '';
+                        background-color: rgba(255, 255, 255, 0.464);
+                        width: 100%;
+                        height: 1px;
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+            }
         }
     }
 }

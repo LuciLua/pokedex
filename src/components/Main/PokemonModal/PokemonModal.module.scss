@@ -211,12 +211,31 @@
 
 @media (max-width: 1000px) {
     .container {
+	display: flex;
+	align-items: flex-start;
+	overflow-y: scroll;
+	
+	&::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--secondary-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 0.5rem;
+    border: 0.25rem solid var(--secondary-color);
+  }
+	
         .modal {
             min-width: 80vw;
             width: fit-content;
             padding: 10px;
             gap: 10px;
-
+			margin: 10px;
+			
             .statsInfoContainer {
                 width: 100%;
                 padding: 20px;

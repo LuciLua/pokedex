@@ -54,6 +54,8 @@ body {
 
   background: linear-gradient(var(--primary-color), var(--primary-color-light));
   background-size: 100%;
+  
+    max-width: 100vw;
 }
 
 .background {

@@ -47,7 +47,7 @@ function Pokedex({ pokemonList, setModal, setPokemonData, findPokemon }: Pokedex
                 <div className={styles.cards}>
                     {verifyFindPokemonAndRenderCards(findPokemon)}
                 </div>
-                <button className={styles.loadMore}>Carregar mais</button>
+                {/* <button className={styles.loadMore}>Carregar mais</button> */}
             </div>
         </div>
     )

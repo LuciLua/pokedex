@@ -21,6 +21,8 @@
 
 To contribute to this project or learn from it is very simple, just clone this repository on your computer and install the necessary dependencies for it to work. Below you can check how to do this, as well as how to run it on a local server.
 
+!!! Filter not work still
+
 ### 📌 Requirement
 
 > node package manager (NPM or YARN)
